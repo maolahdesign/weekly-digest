@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>週報精選｜AI × UI × UX — 2026/06/18–06/24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:       #141413;
+      --light:      #faf9f5;
+      --mid-gray:   #b0aea5;
+      --light-gray: #e8e6dc;
+      --orange:     #d97757;
+      --blue:       #6a9bcc;
+      --green:      #788c5d;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      font-family: 'Lora', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--light-gray);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--mid-gray);
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 400;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Section Label ── */
+    .section-label {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      padding: 52px 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--light-gray);
+    }
+
+    /* ── Card ── */
+    .card {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--light-gray);
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 0 20px;
+    }
+
+    .card:last-child { border-bottom: none; }
+
+    .card-num {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--mid-gray);
+      padding-top: 3px;
+    }
+
+    .card-body {}
+
+    .card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .tag-orange { background: #fdf0eb; color: var(--orange); }
+    .tag-blue   { background: #eef4fa; color: var(--blue); }
+    .tag-green  { background: #f0f3ec; color: var(--green); }
+
+    .card h2 {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #3a3a38;
+      font-size: 14.5px;
+      margin-bottom: 8px;
+    }
+
+    .callout {
+      border-left: 3px solid var(--orange);
+      padding: 10px 14px;
+      background: #fdf7f4;
+      border-radius: 0 4px 4px 0;
+      margin-top: 14px;
+      font-size: 13.5px;
+      color: #5a3020;
+      font-style: italic;
+    }
+
+    .callout.blue {
+      border-color: var(--blue);
+      background: #f2f7fc;
+      color: #1d3a52;
+    }
+
+    /* ── Links ── */
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      border: 1px solid var(--light-gray);
+      border-radius: 4px;
+      padding: 5px 12px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .link-btn:hover {
+      border-color: var(--mid-gray);
+      color: var(--orange);
+    }
+
+    .link-btn svg {
+      opacity: 0.45;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--light-gray);
+      margin-top: 64px;
+      padding: 32px 24px;
+      text-align: center;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 12px;
+      color: var(--mid-gray);
+    }
+
+    @media (max-width: 540px) {
+      .card { grid-template-columns: 1fr; }
+      .card-num { display: none; }
+      header { padding: 40px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Weekly Digest</p>
+  <h1>AI × UI × UX 週報精選</h1>
+  <p class="subtitle">2026 年 6 月 18 日 – 6 月 24 日 &nbsp;·&nbsp; 從訂閱電郵精選 8 則</p>
+</header>
+
+<div class="container">
+
+  <!-- ── AI Section ── -->
+  <div class="section-label">AI 工具與應用</div>
+
+  <div class="card">
+    <div class="card-num">01</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-orange">AI Agent</span>
+        <span class="tag tag-orange">Automation</span>
+      </div>
+      <h2>Codex 推出 Record and Replay — 示範一次，變成永久技能</h2>
+      <p>OpenAI Codex 上線全新模式：在 Mac 示範一次操作，Codex 學習後封裝成可重複調用的 SKILL.md 技能檔，支援 Open Agent Skills Standard，可跨工具共用（包括 Claude Code 的 <code>.claude/skills/</code>）。費用報銷、定期報告、重複表單，錄一次搞定。</p>
+      <div class="callout">為什麼值得關注：門檻極低，讓非工程師也能建立自動化流程，設計師與 PM 同樣受益。</div>
+      <div class="card-links">
+        <a class="link-btn" href="https://developers.openai.com/codex/record-and-replay" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          官方文件
+        </a>
+        <a class="link-btn" href="https://the-decoder.com/openais-codex-can-now-watch-you-work-once-and-repeat-the-task-forever/" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          The Decoder
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">02</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-orange">Robotics</span>
+        <span class="tag tag-orange">Safety</span>
+      </div>
+      <h2>Nvidia Halos for Robotics — 實體 AI 的第一套全棧安全系統</h2>
+      <p>Nvidia 於 6/22 發布業界首個 ANAB 認證的實體 AI 安全系統，涵蓋 AI 算力（IGX Thor）、感測器整合、安全軟體棧，並與 TÜV Rheinland、UL Solutions 等認證機構合作。Agility Robotics 成為首家採用公司。</p>
+      <div class="card-links">
+        <a class="link-btn" href="https://nvidianews.nvidia.com/news/nvidia-announces-halos-for-robotics-the-industrys-first-full-stack-safety-system-for-physical-ai" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Nvidia Newsroom
+        </a>
+        <a class="link-btn" href="https://developer.nvidia.com/blog/inside-nvidia-halos-for-robotics-a-full-stack-functional-safety-system-for-physical-ai/" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          技術部落格
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">03</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-orange">AI Safety</span>
+        <span class="tag tag-orange">Governance</span>
+      </div>
+      <h2>AI Agent Hook Guardrails — Agent 安全護欄開始成熟</h2>
+      <p>PreToolUse hook 可攔截危險指令、File access hook 保護 .env 及 secrets，可設定在個人、專案或團隊層級。Gartner 預測 2026 年底 AI 相關法律索賠將超過 2,000 件，安全治理需求正急迫上升。</p>
+      <div class="card-links">
+        <a class="link-btn" href="https://ranthebuilder.cloud/blog/agentic-coding-hooks-deterministic-ai-guardrails/" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          深入閱讀
+        </a>
+        <a class="link-btn" href="https://galileo.ai/blog/best-ai-agent-guardrails-solutions" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Galileo 整理
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">04</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-blue">Google</span>
+        <span class="tag tag-blue">Dev Platform</span>
+      </div>
+      <h2>Firebase Studio 關閉，Google 押注 Antigravity 新平台</h2>
+      <p>6/22 起停止建立新工作區，2027/3/22 完全關閉。Google 整合開發工具至兩條路：快速原型 → Google AI Studio；高速多 Agent 工作流 → Antigravity（前身 Project IDX）。</p>
+      <div class="card-links">
+        <a class="link-btn" href="https://firebase.google.com/docs/studio/migrating-project" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          遷移指南
+        </a>
+        <a class="link-btn" href="https://abit.ee/en/artificial-intelligence/google-ai-studio-antigravity-vibe-coding-gemini-firebase-studio-ide-app-development-2026-en" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Antigravity 介紹
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── UX Section ── -->
+  <div class="section-label">UI / UX 設計</div>
+
+  <div class="card">
+    <div class="card-num">05</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-green">AI × Design</span>
+        <span class="tag tag-green">Tools</span>
+      </div>
+      <h2>2026 年 UX 設計師實際在用的 8 個 AI 工具</h2>
+      <p>Muzli Design Inspiration 整理了真正被使用的 AI 設計工具：UI 生成（Lovable、v0、Bolt）、圖像（Midjourney、Firefly）、工作流自動化（Figma AI、Magician）、程式碼橋接（Claude Code to Canvas）。核心心態：10% 的時間，70–80% 的品質輸出。</p>
+      <div class="card-links">
+        <a class="link-btn" href="https://medium.muz.li/the-8-top-ai-tools-i-actually-use-in-my-ux-design-workflow-2026-8223a201753d" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Medium / Muzli
+        </a>
+        <a class="link-btn" href="https://muz.li/blog/best-ai-design-tools-for-ui-ux-designers-in-2026/" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Muzli Blog
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">06</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-green">AI × UX</span>
+        <span class="tag tag-green">Workflow</span>
+      </div>
+      <h2>UI/UX 設計師使用 AI 的 6 種方式</h2>
+      <p>Ryan Almeida 的 Medium 文章拆解：自動生成 wireframe 與 prototype、UX 文案草稿、無障礙設計檢查、自適應介面、design-to-code 流程。重要趨勢：設計師的評估標準正從「畫素推得多準」轉向「提示詞寫得多好」。</p>
+      <div class="card-links">
+        <a class="link-btn" href="https://medium.com/@ryan.almeida86/the-ultimate-ui-ux-designer-toolkit-everything-you-actually-need-in-2026-634981040325" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Medium
+        </a>
+        <a class="link-btn" href="https://medium.com/design-bootcamp/top-ui-ux-trends-to-watch-in-2026-379a955ce591" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          UX Trends 2026
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">07</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-green">UI Pattern</span>
+        <span class="tag tag-green">Data Display</span>
+      </div>
+      <h2>Cards vs. Lists vs. Tables vs. Data Grids — 資料呈現的 UX 抉擇</h2>
+      <p>LinkedIn 設計 Newsletter 深入比較四種資料顯示模式：Card 適合視覺瀏覽、List 輕量高效、Table 利於比較、Data Grid 處理大量可操作資料。在認知負荷、資訊密度與互動方式上各有取捨，適合作為設計決策的參考框架。</p>
+      <div class="card-links">
+        <a class="link-btn" href="https://www.linkedin.com/news/story/apples-design-team-set-for-shake-up-4997986/" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          LinkedIn Newsletter
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">08</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-blue">Apple</span>
+        <span class="tag tag-blue">Design Culture</span>
+      </div>
+      <h2>Apple 設計部門失去話語權 — 新任 CEO John Ternus 誓言重建</h2>
+      <p>TLDR 報導：Apple 工業設計組織自 Jony Ive 2019 年離職後持續式微，Alan Dye 等核心人才出走。設計部門淪為「服務局」。新任 CEO John Ternus（2026/9/1 上任）承諾重建設計團隊，給予真正的決策席位。</p>
+      <div class="callout blue">設計界意義：能否重現「設計驅動產品」的 Apple，將決定下個十年的產品走向。</div>
+      <div class="card-links">
+        <a class="link-btn" href="https://9to5mac.com/2026/06/21/john-ternus-apple-design-team-influence/" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          9to5Mac
+        </a>
+        <a class="link-btn" href="https://thenextweb.com/news/apple-design-team-crisis-ternus-ceo-rebuild" target="_blank">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          The Next Web
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  自動從訂閱電郵精選，每週一更新 &nbsp;·&nbsp; AI × UI × UX &nbsp;·&nbsp; troiepan@gmail.com
+</footer>
+
+</body>
+</html>
