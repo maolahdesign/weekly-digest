@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選｜2026年7月20日–7月27日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #141413;
+    --light: #faf9f5;
+    --mid-gray: #b0aea5;
+    --light-gray: #e8e6dc;
+    --orange: #d97757;
+    --blue: #6a9bcc;
+    --green: #788c5d;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--light);
+    color: var(--dark);
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  header {
+    margin-bottom: 48px;
+  }
+
+  header .back {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: var(--mid-gray);
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+
+  header .back:hover { color: var(--dark); }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .date-range {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--mid-gray);
+    margin: 0;
+  }
+
+  section.category {
+    margin-bottom: 48px;
+  }
+
+  .category-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .category-title .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .cat-ai .dot { background: var(--orange); }
+  .cat-ux .dot { background: var(--green); }
+
+  .card {
+    background: #fff;
+    border-left: 4px solid var(--light-gray);
+    border-radius: 4px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+
+  .cat-ai .card { border-left-color: var(--orange); }
+  .cat-ux .card { border-left-color: var(--green); }
+
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .card-num {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--mid-gray);
+  }
+
+  .card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--dark);
+    margin: 0 0 10px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--light-gray);
+    color: var(--dark);
+  }
+
+  .cat-ai .tag { background: rgba(217,119,87,0.12); color: var(--orange); }
+  .cat-ux .tag { background: rgba(120,140,93,0.14); color: var(--green); }
+
+  .summary {
+    font-size: 15px;
+    color: var(--dark);
+    margin: 0 0 14px;
+  }
+
+  .link-btn {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 7px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--dark);
+    color: var(--dark);
+  }
+
+  .cat-ai .link-btn { border-color: var(--orange); color: var(--orange); }
+  .cat-ux .link-btn { border-color: var(--green); color: var(--green); }
+
+  .link-btn:hover { opacity: 0.7; }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light-gray);
+    text-align: center;
+  }
+
+  footer a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: var(--mid-gray);
+    text-decoration: none;
+  }
+
+  footer a:hover { color: var(--dark); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a class="back" href="../index.html">← 返回首頁</a>
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="date-range">2026 年 7 月 20 日 – 7 月 27 日</p>
+  </header>
+
+  <section class="category cat-ai">
+    <h2 class="category-title"><span class="dot"></span>AI 工具與應用</h2>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">01</span></div>
+      <h3 class="card-title">Figma 在 AI 競賽中真的落後了嗎？</h3>
+      <div class="tags">
+        <span class="tag">AI Race</span>
+        <span class="tag">Design Tools</span>
+        <span class="tag">Industry</span>
+      </div>
+      <p class="summary">UX Planet 作者 Nick Babich 分析 Figma 從 2010 年代末的設計工具龍頭，到如今在 AI 原生設計浪潮中被質疑動作太慢。文章對比了 Figma 近期的 AI 功能與新創對手的推進速度，值得所有仰賴 Figma 工作流的設計師關注。</p>
+      <a class="link-btn" href="https://medium.com/@101/is-figma-losing-the-ai-race-3ef52bcc33ca" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">02</span></div>
+      <h3 class="card-title">Claude Design 會不會取代 Figma？</h3>
+      <div class="tags">
+        <span class="tag">AI Agent</span>
+        <span class="tag">Design Tools</span>
+      </div>
+      <p class="summary">承接 Figma 焦慮話題，這篇文章直接探討 Anthropic 的 Claude Design 是否具備顛覆傳統設計工具的能力。作者從實際操作角度比較兩者在生成介面、迭代速度上的差異，是這週討論度最高的設計工具話題之一。</p>
+      <a class="link-btn" href="https://medium.com/@imrsharma0/did-figma-just-kill-claude-design-2f7192505309" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">03</span></div>
+      <h3 class="card-title">打造專屬你自己的 AI Agent 動態夥伴</h3>
+      <div class="tags">
+        <span class="tag">AI Agent</span>
+        <span class="tag">Developer Tools</span>
+      </div>
+      <p class="summary">AI 研究者 Aishwarya Srinivasan 分享如何做出一個會即時顯示你的 Agent 在做什麼的動畫小夥伴（Codex Pet），並可自訂造型代表個人風格。這是「讓 AI 工作過程可視化」這股小趨勢的一個有趣示範，對想替 Agent 工具做更好使用者體驗的人很有參考價值。</p>
+      <a class="link-btn" href="https://open.substack.com/pub/aishwaryasrinivasan/p/how-to-build-your-own-custom-codex" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">04</span></div>
+      <h3 class="card-title">Anaconda 收購 AI 程式碼代理新創 Kilo Code</h3>
+      <div class="tags">
+        <span class="tag">AI Agent</span>
+        <span class="tag">Industry</span>
+      </div>
+      <p class="summary">Anaconda 官方電子報宣布收購開源 AI 編碼代理 Kilo Code，並說明此舉將把代理式編碼能力整合進 Anaconda 的資料科學工作流中。對於關注 AI coding agent 生態整合速度的人來說，這是本週值得記錄的一筆併購動作。</p>
+      <a class="link-btn" href="https://www.anaconda.com/blog/anaconda-acquires-kilo-code" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+  </section>
+
+  <section class="category cat-ux">
+    <h2 class="category-title"><span class="dot"></span>UI/UX 設計</h2>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">05</span></div>
+      <h3 class="card-title">SaaS 界最受推崇的介面，其實只靠三位設計師完成</h3>
+      <div class="tags">
+        <span class="tag">Design Team</span>
+        <span class="tag">SaaS</span>
+      </div>
+      <p class="summary">Pawel Klasa 拆解一個廣受業界稱讚的 SaaS 產品介面背後的團隊規模與工作方式，說明小而精的設計團隊如何靠清楚的設計系統與決策節奏，做出比大團隊更一致的體驗。對想精簡設計流程的團隊是很實際的案例參考。</p>
+      <a class="link-btn" href="https://medium.com/@pawel.klasa/the-most-admired-ui-in-saas-was-built-by-just-three-designers-888ccce9afd2" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">06</span></div>
+      <h3 class="card-title">領先 99% 同行的 UI/UX 設計師具備哪 7 個技能</h3>
+      <div class="tags">
+        <span class="tag">Career</span>
+        <span class="tag">Skill Set</span>
+      </div>
+      <p class="summary">Shubhankar Singh 整理出頂尖 UI/UX 設計師與一般設計師的關鍵差異，涵蓋系統性思考、跨部門溝通到快速原型能力。這篇適合想規劃自我成長路徑、或帶團隊時用來檢視招募標準的設計主管。</p>
+      <a class="link-btn" href="https://medium.com/@shubhankardesignux/7-skills-to-get-ahead-of-99-of-ui-ux-designers-30f7d736e98d" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">07</span></div>
+      <h3 class="card-title">AI 時代讓我成為更好產品設計師的 5 個技能</h3>
+      <div class="tags">
+        <span class="tag">AI + Design</span>
+        <span class="tag">Skill Set</span>
+      </div>
+      <p class="summary">作者以第一人稱分享在 AI 工具普及後，真正拉開設計師差距的不是生成速度，而是判斷力、系統思維與提示設計能力。文章直接回應「AI 會不會取代設計師」這個焦慮，給出更務實的技能升級方向。</p>
+      <a class="link-btn" href="https://medium.com/@crdesignz/5-skills-that-made-me-a-better-product-designer-in-the-ai-era-e40a89cc8ee7" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-num">08</span></div>
+      <h3 class="card-title">「元件已死」：AI 生成介面時代的新設計典範</h3>
+      <div class="tags">
+        <span class="tag">Design Systems</span>
+        <span class="tag">AI + Design</span>
+      </div>
+      <p class="summary">作者提出一個挑釁性觀點：當 AI 能即時生成客製化介面元素時，傳統「固定元件庫」的設計系統思維可能不再適用。文章討論設計系統該如何演化以應對生成式介面的彈性需求，是這週最具討論性的設計趨勢文章。</p>
+      <a class="link-btn" href="https://medium.com/@disco_lu/components-are-dead-ac8de98e58de" target="_blank" rel="noopener">閱讀原文 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <a href="../index.html">← 返回首頁</a>
+  </footer>
+
+</div>
+</body>
+</html>
