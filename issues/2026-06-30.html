@@ -1,365 +1,221 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI × UI × UX 週報精選 — 2026 年 6 月 23 日 – 6 月 30 日</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --dark: #141413;
-      --light: #faf9f5;
-      --mid-gray: #b0aea5;
-      --light-gray: #e8e6dc;
-      --orange: #d97757;
-      --blue: #6a9bcc;
-      --green: #788c5d;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background-color: var(--light);
-      color: var(--dark);
-      font-family: 'Lora', Georgia, serif;
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ── Header ── */
-    header {
-      background: var(--dark);
-      color: var(--light);
-      padding: 56px 32px 48px;
-      text-align: center;
-    }
-    header .back-link {
-      display: inline-block;
-      font-family: 'Poppins', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-      margin-bottom: 32px;
-      transition: color 0.2s;
-    }
-    header .back-link:hover { color: var(--light); }
-    header .back-link::before { content: '← '; }
-
-    header h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(24px, 5vw, 40px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-    header .issue-meta {
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      color: var(--mid-gray);
-    }
-
-    /* ── Main layout ── */
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    /* ── Section heading ── */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 48px 0 28px;
-    }
-    .section-header .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .section-header h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-    }
-
-    /* ── Card ── */
-    .card {
-      border-left: 3px solid var(--light-gray);
-      padding: 24px 24px 20px 28px;
-      margin-bottom: 20px;
-      background: #fff;
-      border-radius: 0 8px 8px 0;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .card:hover {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-    .card.orange { border-left-color: var(--orange); }
-    .card.green  { border-left-color: var(--green); }
-
-    .card-number {
-      font-family: 'Poppins', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--mid-gray);
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 10px;
-    }
-    .tag {
-      font-family: 'Poppins', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 99px;
-      letter-spacing: 0.04em;
-    }
-    .tag-orange { background: rgba(217,119,87,0.12); color: var(--orange); }
-    .tag-green  { background: rgba(120,140,93,0.12); color: var(--green); }
-    .tag-blue   { background: rgba(106,155,204,0.12); color: var(--blue); }
-    .tag-gray   { background: var(--light-gray); color: var(--mid-gray); }
-
-    .card h3 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 17px;
-      font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-
-    .card p {
-      font-size: 15px;
-      color: #4a4843;
-      line-height: 1.75;
-    }
-
-    .card-footer {
-      margin-top: 16px;
-    }
-    .read-btn {
-      display: inline-block;
-      font-family: 'Poppins', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 7px 16px;
-      border-radius: 6px;
-      background: var(--dark);
-      color: var(--light);
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s;
-    }
-    .read-btn:hover { opacity: 0.75; }
-    .read-btn.orange { background: var(--orange); }
-    .read-btn.green  { background: var(--green); }
-
-    /* ── Divider ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--light-gray);
-      margin: 56px 0 0;
-    }
-
-    /* ── Footer ── */
-    footer {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 32px 24px 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    footer .back-link {
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--mid-gray);
-      transition: color 0.2s;
-    }
-    footer .back-link:hover { color: var(--dark); }
-    footer .back-link::before { content: '← '; }
-    footer .caption {
-      font-family: 'Poppins', sans-serif;
-      font-size: 12px;
-      color: var(--mid-gray);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選 — 2026/06/23 – 2026/06/30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
+  }
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
+  }
+</style>
 </head>
 <body>
 
-<header>
-  <a class="back-link" href="../index.html">回到首頁</a>
-  <h1>AI × UI × UX 週報精選</h1>
-  <div class="issue-meta">2026 年 6 月 23 日 – 6 月 30 日 &nbsp;·&nbsp; 第 2 期</div>
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">本期重點：WebMCP 開放、本地模型突破、Claude Tag、Google Stitch。</p>
+    <p class="hero-date">2026/06/23 – 2026/06/30</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
 </header>
 
 <main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、開發工具與產業動態 · 5 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">WebMCP</span><span class="tag">Web Standard</span></div>
+          <h3 class="story-title"><a href="https://web.dev" target="_blank" rel="noopener">WebMCP Origin Trial 開放：AI Agent 正式融入瀏覽器</a></h3>
+          <p class="story-summary">Google 宣布 WebMCP（Model Context Protocol for the Web）Origin Trial 正式開放，讓 AI 代理可透過瀏覽器原生 API 直接與網頁內容互動。這代表 AI 不再只是外掛工具，而是能感知、操作瀏覽器環境的原生參與者，開啟了人機協作互動的全新可能性。對 Web 開發者而言，這是 AI 整合的重要基礎設施里程碑。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://web.dev" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">web.dev</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Local AI</span><span class="tag">LLM</span><span class="tag">效能</span></div>
+          <h3 class="story-title"><a href="https://www.sitepoint.com" target="_blank" rel="noopener">本地 AI 模型已足夠強大：2022 年 Mac 達前沿速度 75%</a></h3>
+          <p class="story-summary">根據 SitePoint 報導，搭載 2022 款 Mac 已能以前沿雲端模型 75% 的速度執行程式碼。本地模型的效能大幅躍進，意味著開發者不必再依賴雲端 API 即可完成大量 AI 推論任務，同時降低延遲、保護隱私，也讓邊緣 AI 應用更趨可行。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://www.sitepoint.com" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">SitePoint</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Claude</span><span class="tag">Slack</span></div>
+          <h3 class="story-title"><a href="https://tldr.tech" target="_blank" rel="noopener">Anthropic 推出 Claude Tag：你在 Slack 上的 AI 分身</a></h3>
+          <p class="story-summary">Claude Tag 是 Anthropic 推出的全新功能，讓使用者在 Slack 中創建能代表自己互動的 AI 聊天機器人，可監控 Slack 動態、自動回應、代理參與討論。這標誌著 AI 代理從「單點工具」演進為融入工作流程的「AI 同事」，預示企業協作模式即將迎來根本性改變。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://tldr.tech" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">tldr.tech</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Design</span><span class="tag">Design Tools</span><span class="tag">UX Research</span></div>
+          <h3 class="story-title"><a href="https://medium.com" target="_blank" rel="noopener">Google Stitch 登場：初級設計師的角色將何去何從？</a></h3>
+          <p class="story-summary">Web Designer Depot 深度分析 Google 推出的 Stitch AI 設計工具，探討其對設計產業的衝擊，尤其是初級設計師的就業前景。AI 自動化像素級排版工作的能力持續增強，但資深設計師的策略判斷、使用者研究與創意思考仍是 AI 難以取代的核心價值。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Design</span><span class="tag">Design Tools</span><span class="tag">工具評測</span></div>
+          <h3 class="story-title"><a href="https://medium.com" target="_blank" rel="noopener">最佳 AI 設計工具實測：從 UX/UI 角度的真實評比</a></h3>
+          <p class="story-summary">Pedals Up 作者對市面上主流 AI 設計輔助工具進行了完整的 UX/UI 實測，從生產力提升、學習曲線到輸出品質進行系統性比較。隨著 AI 設計工具快速成熟，這份實測報告有助設計師跳過行銷話術、找到真正適合工作流程的工具。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+  </section>
 
-  <!-- AI 工具與應用 -->
-  <div class="section-header">
-    <div class="dot" style="background:var(--orange)"></div>
-    <h2>AI 工具與應用</h2>
-  </div>
-
-  <div class="card orange">
-    <div class="card-number">No. 01</div>
-    <div class="tags">
-      <span class="tag tag-orange">AI Agent</span>
-      <span class="tag tag-blue">WebMCP</span>
-      <span class="tag tag-blue">Web Standard</span>
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計方法、工具與職涯趨勢 · 3 則</p>
     </div>
-    <h3>WebMCP Origin Trial 開放：AI Agent 正式融入瀏覽器</h3>
-    <p>
-      Google 宣布 WebMCP（Model Context Protocol for the Web）Origin Trial 正式開放，讓 AI 代理可透過瀏覽器原生 API 直接與網頁內容互動。這代表 AI 不再只是外掛工具，而是能感知、操作瀏覽器環境的原生參與者，開啟了人機協作互動的全新可能性。對 Web 開發者而言，這是 AI 整合的重要基礎設施里程碑。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn orange" href="https://web.dev" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
-  <div class="card orange">
-    <div class="card-number">No. 02</div>
-    <div class="tags">
-      <span class="tag tag-orange">Local AI</span>
-      <span class="tag tag-orange">LLM</span>
-      <span class="tag tag-gray">效能</span>
-    </div>
-    <h3>本地 AI 模型已足夠強大：2022 年 Mac 達前沿速度 75%</h3>
-    <p>
-      根據 SitePoint 報導，搭載 2022 款 Mac 已能以前沿雲端模型 75% 的速度執行程式碼。本地模型的效能大幅躍進，意味著開發者不必再依賴雲端 API 即可完成大量 AI 推論任務，同時降低延遲、保護隱私，也讓邊緣 AI 應用更趨可行。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn orange" href="https://www.sitepoint.com" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
-  <div class="card orange">
-    <div class="card-number">No. 03</div>
-    <div class="tags">
-      <span class="tag tag-orange">AI Agent</span>
-      <span class="tag tag-orange">Claude</span>
-      <span class="tag tag-blue">Slack</span>
-    </div>
-    <h3>Anthropic 推出 Claude Tag：你在 Slack 上的 AI 分身</h3>
-    <p>
-      Claude Tag 是 Anthropic 推出的全新功能，讓使用者在 Slack 中創建能代表自己互動的 AI 聊天機器人，可監控 Slack 動態、自動回應、代理參與討論。這標誌著 AI 代理從「單點工具」演進為融入工作流程的「AI 同事」，預示企業協作模式即將迎來根本性改變。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn orange" href="https://tldr.tech" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
-  <div class="card orange">
-    <div class="card-number">No. 04</div>
-    <div class="tags">
-      <span class="tag tag-orange">AI Design</span>
-      <span class="tag tag-green">Design Tools</span>
-      <span class="tag tag-green">UX Research</span>
-    </div>
-    <h3>Google Stitch 登場：初級設計師的角色將何去何從？</h3>
-    <p>
-      Web Designer Depot 深度分析 Google 推出的 Stitch AI 設計工具，探討其對設計產業的衝擊，尤其是初級設計師的就業前景。AI 自動化像素級排版工作的能力持續增強，但資深設計師的策略判斷、使用者研究與創意思考仍是 AI 難以取代的核心價值。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn orange" href="https://medium.com" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
-  <div class="card orange">
-    <div class="card-number">No. 05</div>
-    <div class="tags">
-      <span class="tag tag-orange">AI Design</span>
-      <span class="tag tag-green">Design Tools</span>
-      <span class="tag tag-gray">工具評測</span>
-    </div>
-    <h3>最佳 AI 設計工具實測：從 UX/UI 角度的真實評比</h3>
-    <p>
-      Pedals Up 作者對市面上主流 AI 設計輔助工具進行了完整的 UX/UI 實測，從生產力提升、學習曲線到輸出品質進行系統性比較。隨著 AI 設計工具快速成熟，這份實測報告有助設計師跳過行銷話術、找到真正適合工作流程的工具。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn orange" href="https://medium.com" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
-  <!-- UI/UX 設計 -->
-  <div class="section-header">
-    <div class="dot" style="background:var(--green)"></div>
-    <h2>UI / UX 設計</h2>
-  </div>
-
-  <div class="card green">
-    <div class="card-number">No. 06</div>
-    <div class="tags">
-      <span class="tag tag-green">Career</span>
-      <span class="tag tag-orange">AI Impact</span>
-      <span class="tag tag-green">職涯</span>
-    </div>
-    <h3>AI 不會取代設計師，但正在重新定義設計師的市場價值</h3>
-    <p>
-      Yashita Sharma 在 Medium 分析，AI 正在改變設計師的薪酬結構而非消滅設計師職位——能善用 AI 提升產出的設計師薪資持續攀升，反之則陷入競爭壓力。文章建議設計師將重心轉向高階策略思維、使用者研究與系統設計，讓 AI 處理重複性執行工作。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn green" href="https://medium.com" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
-  <div class="card green">
-    <div class="card-number">No. 07</div>
-    <div class="tags">
-      <span class="tag tag-green">Design System</span>
-      <span class="tag tag-green">Team Workflow</span>
-      <span class="tag tag-gray">實戰經驗</span>
-    </div>
-    <h3>讓團隊損失數月的 Design System 錯誤，以及如何避免</h3>
-    <p>
-      Atomize 的 Design System 審計團隊整理了最常見且代價最高的設計系統錯誤：過早抽象化、忽略 token 命名規範、缺乏元件使用文件。設計系統是跨團隊協作的基礎，避免這些常見陷阱，能顯著縮短開發週期並降低技術債。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn green" href="https://medium.com" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
-  <div class="card green">
-    <div class="card-number">No. 08</div>
-    <div class="tags">
-      <span class="tag tag-green">Visual Design</span>
-      <span class="tag tag-green">Branding</span>
-      <span class="tag tag-gray">趨勢觀察</span>
-    </div>
-    <h3>2026 年 Logo 設計趨勢：資深設計師的真實田野觀察</h3>
-    <p>
-      Web Designer Depot 的資深設計師分享在實際客戶案例中觀察到的 2026 年 Logo 趨勢，點名「大多數設計師正在錯過」的關鍵轉變。不同於坐在辦公室的趨勢預測，這篇文章來自第一線執行的真實觀察，對品牌設計師和 UI 設計師都有參考價值。
-    </p>
-    <div class="card-footer">
-      <a class="read-btn green" href="https://medium.com" target="_blank">閱讀原文</a>
-    </div>
-  </div>
-
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Career</span><span class="tag">AI Impact</span><span class="tag">職涯</span></div>
+          <h3 class="story-title"><a href="https://medium.com" target="_blank" rel="noopener">AI 不會取代設計師，但正在重新定義設計師的市場價值</a></h3>
+          <p class="story-summary">Yashita Sharma 在 Medium 分析，AI 正在改變設計師的薪酬結構而非消滅設計師職位——能善用 AI 提升產出的設計師薪資持續攀升，反之則陷入競爭壓力。文章建議設計師將重心轉向高階策略思維、使用者研究與系統設計，讓 AI 處理重複性執行工作。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design System</span><span class="tag">Team Workflow</span><span class="tag">實戰經驗</span></div>
+          <h3 class="story-title"><a href="https://medium.com" target="_blank" rel="noopener">讓團隊損失數月的 Design System 錯誤，以及如何避免</a></h3>
+          <p class="story-summary">Atomize 的 Design System 審計團隊整理了最常見且代價最高的設計系統錯誤：過早抽象化、忽略 token 命名規範、缺乏元件使用文件。設計系統是跨團隊協作的基礎，避免這些常見陷阱，能顯著縮短開發週期並降低技術債。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Visual Design</span><span class="tag">Branding</span><span class="tag">趨勢觀察</span></div>
+          <h3 class="story-title"><a href="https://medium.com" target="_blank" rel="noopener">2026 年 Logo 設計趨勢：資深設計師的真實田野觀察</a></h3>
+          <p class="story-summary">Web Designer Depot 的資深設計師分享在實際客戶案例中觀察到的 2026 年 Logo 趨勢，點名「大多數設計師正在錯過」的關鍵轉變。不同於坐在辦公室的趨勢預測，這篇文章來自第一線執行的真實觀察，對品牌設計師和 UI 設計師都有參考價值。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+  </section>
 </main>
 
-<hr class="divider">
-
 <footer>
-  <a class="back-link" href="../index.html">回到首頁</a>
-  <span class="caption">AI × UI × UX 週報 &nbsp;·&nbsp; 2026 © troiepan@gmail.com</span>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
 </footer>
 
 </body>

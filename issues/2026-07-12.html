@@ -3,295 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI × UI × UX 週報精選｜2026年7月5日 – 7月12日</title>
+<title>AI × UI × UX 週報精選 — 2026/07/05 – 2026/07/12</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --dark: #141413;
-    --light: #faf9f5;
-    --mid-gray: #b0aea5;
-    --light-gray: #e8e6dc;
-    --orange: #d97757;
-    --blue: #6a9bcc;
-    --green: #788c5d;
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
   }
-
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
   * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    background: var(--light);
-    color: var(--dark);
-    font-family: 'Lora', serif;
-    line-height: 1.7;
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
   }
-
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-
-  header {
-    margin-bottom: 48px;
-  }
-
-  header .back-link {
-    display: inline-block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: var(--mid-gray);
-    text-decoration: none;
-    margin-bottom: 24px;
-  }
-
-  header .back-link:hover { color: var(--dark); }
-
-  h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    margin: 0 0 12px;
-    letter-spacing: -0.01em;
-  }
-
-  .date-range {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    color: var(--mid-gray);
-    margin: 0;
-  }
-
-  section.category {
-    margin-bottom: 56px;
-  }
-
-  .category-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 24px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--light-gray);
-  }
-
-  .category-title.orange { color: var(--orange); }
-  .category-title.green { color: var(--green); }
-
-  .item {
-    display: flex;
-    gap: 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--light-gray);
-  }
-
-  .item:last-child { border-bottom: none; }
-
-  .item-number {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--mid-gray);
-    min-width: 24px;
-    padding-top: 2px;
-  }
-
-  .item-body { flex: 1; }
-
-  .tags {
-    margin-bottom: 10px;
-  }
-
-  .tag {
-    display: inline-block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 10px;
-    border-radius: 100px;
-    margin-right: 6px;
-    letter-spacing: 0.02em;
-  }
-
-  .tag-orange { background: rgba(217, 119, 87, 0.12); color: var(--orange); }
-  .tag-green { background: rgba(120, 140, 93, 0.14); color: var(--green); }
-  .tag-blue { background: rgba(106, 155, 204, 0.14); color: var(--blue); }
-
-  .item-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    margin: 0 0 10px;
-    line-height: 1.4;
-  }
-
-  .item-summary {
-    font-size: 16px;
-    color: var(--dark);
-    margin: 0 0 14px;
-  }
-
-  .item-link {
-    display: inline-block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--dark);
-    text-decoration: none;
-    padding: 6px 14px;
-    border: 1px solid var(--dark);
-    border-radius: 6px;
-  }
-
-  .item-link:hover {
-    background: var(--dark);
-    color: var(--light);
-  }
-
-  footer {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 1px solid var(--light-gray);
-    text-align: center;
-  }
-
-  footer a {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: var(--mid-gray);
-    text-decoration: none;
-  }
-
-  footer a:hover { color: var(--dark); }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <a class="back-link" href="../index.html">&larr; 返回首頁</a>
-    <h1>AI × UI × UX 週報精選</h1>
-    <p class="date-range">2026 年 7 月 5 日 – 7 月 12 日</p>
-  </header>
-
-  <section class="category">
-    <div class="category-title orange">AI 工具與應用</div>
-
-    <div class="item">
-      <div class="item-number">01</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-orange">AI Agent</span>
-          <span class="tag tag-orange">Skill.md</span>
-        </div>
-        <h3 class="item-title">Agent Skills 完全指南：SKILL.md 到底是什麼</h3>
-        <p class="item-summary">這篇長文把 Agent Skills 講得很透徹：一個 skill 其實是一個資料夾，不是一份 prompt，裡面裝著讓 Claude／ChatGPT 永久記住的工作流程。文章從結構、撰寫方式到去哪裡找別人做好的 skill 都涵蓋，值得想把重複性工作交給 AI 代理的人細讀。</p>
-        <a class="item-link" href="https://aishwaryasrinivasan.substack.com/p/all-you-need-to-know-about-skillmd" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-number">02</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-orange">LLM</span>
-          <span class="tag tag-orange">Industry</span>
-        </div>
-        <h3 class="item-title">OpenAI 發布 GPT-5.6 模型家族：Sol、Terra、Luna</h3>
-        <p class="item-summary">OpenAI 一次推出三個分層模型：旗艦版 Sol、平價日常版 Terra，以及最快最便宜的 Luna，主打更高的每 token 智慧與更強的代理式（agentic）表現，還新增可同時協調多個 agent 平行作業的「ultra」模式。對關注 AI 產品分層策略的人是重要指標。</p>
-        <a class="item-link" href="https://www.testingcatalog.com/openai-launches-gpt-5-6-sol-terra-and-luna-on-apps-and-api/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-number">03</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-orange">Vibe Coding</span>
-          <span class="tag tag-orange">Workflow</span>
-        </div>
-        <h3 class="item-title">Vibe Coding 的正確心法：從 Prompter 到 Builder</h3>
-        <p class="item-summary">這篇整理自 The Gen Academy 的直播課，把「用嘴巴寫程式」拆成三個層級：只會複製貼上的 Prompter、能跑起來但看不懂程式碼的 Tinkerer，以及真正建立起 repo、版控與架構決策習慣的 Builder。對想認真用 AI 開發產品而非只是玩票的人很有參考價值。</p>
-        <a class="item-link" href="https://thegenacademy.substack.com/p/the-right-way-to-vibe-code" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-number">04</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-orange">AI Design Tools</span>
-          <span class="tag tag-blue">Comparison</span>
-        </div>
-        <h3 class="item-title">實測 4 款頂尖 AI 設計工具：同一個 Prompt 大車拚</h3>
-        <p class="item-summary">作者用同一句 prompt 分別餵給 Flowstep、Google Stitch、Figma Make 與 Claude，比較四者產出的介面設計差異。是一篇很直接的「工具選型」參考，適合正在評估要不要把 AI 生成介面納入設計流程的團隊。</p>
-        <a class="item-link" href="https://medium.com/@cuzegbu/i-tested-4-top-ai-design-tools-with-the-same-prompt-401f5be40a6e" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="category">
-    <div class="category-title green">UI/UX 設計</div>
-
-    <div class="item">
-      <div class="item-number">05</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-green">Design Tools</span>
-          <span class="tag tag-green">Motion</span>
-        </div>
-        <h3 class="item-title">Claude Design：打造驚豔動畫與動態圖像</h3>
-        <p class="item-summary">UX Planet 這篇介紹 Claude Design 如何被用來快速做出原型與動態圖像效果，說明了 AI 生成工具正在往「不只是靜態畫面」的方向擴張，值得做動效設計或簡報視覺的人關注。</p>
-        <a class="item-link" href="https://medium.com/@101/claude-design-create-stunning-animations-and-motion-graphics-f6ada52dc4a0" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-number">06</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-green">Industry</span>
-          <span class="tag tag-green">Career</span>
-        </div>
-        <h3 class="item-title">2026 UX 求職市場劇變，多數設計師還沒準備好</h3>
-        <p class="item-summary">文章指出 2026 年的 UX 求職市場並非萎縮，而是「換了一套規則」：企業要的不再是只會畫線框圖的設計師，而是能理解 AI 產品邏輯、能跟工程與商業對話的角色。對正在轉職或帶團隊的設計主管是很實際的警訊。</p>
-        <a class="item-link" href="https://medium.com/@shaikrish/why-the-ux-job-market-is-changing-in-2026-and-most-designers-arent-ready-df2c1073d5f2" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-number">07</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-green">Design Patterns</span>
-          <span class="tag tag-orange">AI Native</span>
-        </div>
-        <h3 class="item-title">AI 原生產品的 8 個 UX 模式</h3>
-        <p class="item-summary">整理出 2026 年 AI 原生產品普遍會用到的 8 種介面模式，從對話式輸入、漸進式揭露到人機協作的信任設計都有涉及。適合正在設計 AI 功能、想找現成模式參考而不是從零發明的產品設計師。</p>
-        <a class="item-link" href="https://medium.com/@belannazhou/8-ux-patterns-for-ai-native-products-in-2026-c469c35d7513" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="item-number">08</div>
-      <div class="item-body">
-        <div class="tags">
-          <span class="tag tag-green">Figma</span>
-          <span class="tag tag-orange">Industry</span>
-        </div>
-        <h3 class="item-title">Rethinking Figma in an AI world：Figma 在 AI 時代的角色再思考</h3>
-        <p class="item-summary">隨著 AI 把產品開發拉得更靠近「直接生成程式碼」，這篇文章討論 Figma Config 大會透露出的訊號：當設計工具與程式碼的距離越來越近，Figma 需要重新定義自己在流程中的位置。對長期使用 Figma 的設計師是一記警鐘。</p>
-        <a class="item-link" href="https://medium.com/@breathingdesign/rethinking-figma-in-an-ai-world-0facba587ba5" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <a href="../index.html">&larr; 返回首頁</a>
-  </footer>
-
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
 </div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">本期重點：Agent Skills 完全指南、GPT-5.6 發布、AI 原生產品的 UX 模式。</p>
+    <p class="hero-date">2026/07/05 – 2026/07/12</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、開發工具與產業動態 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Skill.md</span></div>
+          <h3 class="story-title"><a href="https://aishwaryasrinivasan.substack.com/p/all-you-need-to-know-about-skillmd" target="_blank" rel="noopener">Agent Skills 完全指南：SKILL.md 到底是什麼</a></h3>
+          <p class="story-summary">這篇長文把 Agent Skills 講得很透徹：一個 skill 其實是一個資料夾，不是一份 prompt，裡面裝著讓 Claude／ChatGPT 永久記住的工作流程。文章從結構、撰寫方式到去哪裡找別人做好的 skill 都涵蓋，值得想把重複性工作交給 AI 代理的人細讀。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://aishwaryasrinivasan.substack.com/p/all-you-need-to-know-about-skillmd" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">aishwaryasrinivasan · Substack</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">LLM</span><span class="tag">Industry</span></div>
+          <h3 class="story-title"><a href="https://www.testingcatalog.com/openai-launches-gpt-5-6-sol-terra-and-luna-on-apps-and-api/" target="_blank" rel="noopener">OpenAI 發布 GPT-5.6 模型家族：Sol、Terra、Luna</a></h3>
+          <p class="story-summary">OpenAI 一次推出三個分層模型：旗艦版 Sol、平價日常版 Terra，以及最快最便宜的 Luna，主打更高的每 token 智慧與更強的代理式（agentic）表現，還新增可同時協調多個 agent 平行作業的「ultra」模式。對關注 AI 產品分層策略的人是重要指標。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://www.testingcatalog.com/openai-launches-gpt-5-6-sol-terra-and-luna-on-apps-and-api/" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">TestingCatalog</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Vibe Coding</span><span class="tag">Workflow</span></div>
+          <h3 class="story-title"><a href="https://thegenacademy.substack.com/p/the-right-way-to-vibe-code" target="_blank" rel="noopener">Vibe Coding 的正確心法：從 Prompter 到 Builder</a></h3>
+          <p class="story-summary">這篇整理自 The Gen Academy 的直播課，把「用嘴巴寫程式」拆成三個層級：只會複製貼上的 Prompter、能跑起來但看不懂程式碼的 Tinkerer，以及真正建立起 repo、版控與架構決策習慣的 Builder。對想認真用 AI 開發產品而非只是玩票的人很有參考價值。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://thegenacademy.substack.com/p/the-right-way-to-vibe-code" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">thegenacademy · Substack</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Design Tools</span><span class="tag">Comparison</span></div>
+          <h3 class="story-title"><a href="https://medium.com/@cuzegbu/i-tested-4-top-ai-design-tools-with-the-same-prompt-401f5be40a6e" target="_blank" rel="noopener">實測 4 款頂尖 AI 設計工具：同一個 Prompt 大車拚</a></h3>
+          <p class="story-summary">作者用同一句 prompt 分別餵給 Flowstep、Google Stitch、Figma Make 與 Claude，比較四者產出的介面設計差異。是一篇很直接的「工具選型」參考，適合正在評估要不要把 AI 生成介面納入設計流程的團隊。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/@cuzegbu/i-tested-4-top-ai-design-tools-with-the-same-prompt-401f5be40a6e" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+  </section>
+
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計方法、工具與職涯趨勢 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design Tools</span><span class="tag">Motion</span></div>
+          <h3 class="story-title"><a href="https://medium.com/@101/claude-design-create-stunning-animations-and-motion-graphics-f6ada52dc4a0" target="_blank" rel="noopener">Claude Design：打造驚豔動畫與動態圖像</a></h3>
+          <p class="story-summary">UX Planet 這篇介紹 Claude Design 如何被用來快速做出原型與動態圖像效果，說明了 AI 生成工具正在往「不只是靜態畫面」的方向擴張，值得做動效設計或簡報視覺的人關注。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/@101/claude-design-create-stunning-animations-and-motion-graphics-f6ada52dc4a0" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Industry</span><span class="tag">Career</span></div>
+          <h3 class="story-title"><a href="https://medium.com/@shaikrish/why-the-ux-job-market-is-changing-in-2026-and-most-designers-arent-ready-df2c1073d5f2" target="_blank" rel="noopener">2026 UX 求職市場劇變，多數設計師還沒準備好</a></h3>
+          <p class="story-summary">文章指出 2026 年的 UX 求職市場並非萎縮，而是「換了一套規則」：企業要的不再是只會畫線框圖的設計師，而是能理解 AI 產品邏輯、能跟工程與商業對話的角色。對正在轉職或帶團隊的設計主管是很實際的警訊。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/@shaikrish/why-the-ux-job-market-is-changing-in-2026-and-most-designers-arent-ready-df2c1073d5f2" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design Patterns</span><span class="tag">AI Native</span></div>
+          <h3 class="story-title"><a href="https://medium.com/@belannazhou/8-ux-patterns-for-ai-native-products-in-2026-c469c35d7513" target="_blank" rel="noopener">AI 原生產品的 8 個 UX 模式</a></h3>
+          <p class="story-summary">整理出 2026 年 AI 原生產品普遍會用到的 8 種介面模式，從對話式輸入、漸進式揭露到人機協作的信任設計都有涉及。適合正在設計 AI 功能、想找現成模式參考而不是從零發明的產品設計師。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/@belannazhou/8-ux-patterns-for-ai-native-products-in-2026-c469c35d7513" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Figma</span><span class="tag">Industry</span></div>
+          <h3 class="story-title"><a href="https://medium.com/@breathingdesign/rethinking-figma-in-an-ai-world-0facba587ba5" target="_blank" rel="noopener">Rethinking Figma in an AI world：Figma 在 AI 時代的角色再思考</a></h3>
+          <p class="story-summary">隨著 AI 把產品開發拉得更靠近「直接生成程式碼」，這篇文章討論 Figma Config 大會透露出的訊號：當設計工具與程式碼的距離越來越近，Figma 需要重新定義自己在流程中的位置。對長期使用 Figma 的設計師是一記警鐘。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/@breathingdesign/rethinking-figma-in-an-ai-world-0facba587ba5" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+  </section>
+</main>
+
+<footer>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
+</footer>
+
 </body>
 </html>

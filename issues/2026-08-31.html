@@ -3,232 +3,219 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI × UI × UX 週報精選 — 2026/08/24 – 08/31</title>
+<title>AI × UI × UX 週報精選 — 2026/08/24 – 2026/08/31</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --dark: #141413;
-    --light: #faf9f5;
-    --mid-gray: #b0aea5;
-    --light-gray: #e8e6dc;
-    --orange: #d97757;
-    --blue: #6a9bcc;
-    --green: #788c5d;
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
   }
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
   * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--light);
-    color: var(--dark);
-    font-family: 'Lora', serif;
-    line-height: 1.7;
-  }
-  header {
-    padding: 48px 24px 32px;
-    max-width: 860px;
-    margin: 0 auto;
-    border-bottom: 1px solid var(--light-gray);
-  }
-  header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    margin: 0 0 8px;
-  }
-  header .date-range {
-    color: var(--mid-gray);
-    font-size: 15px;
-  }
-  header a.back {
-    display: inline-block;
-    margin-top: 16px;
-    font-size: 14px;
-    color: var(--orange);
-    text-decoration: none;
-  }
-  section.category {
-    max-width: 860px;
-    margin: 40px auto;
-    padding: 0 24px;
-  }
-  section.category h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  section.ai h2 { color: var(--orange); }
-  section.ux h2 { color: var(--green); }
-  .card {
-    background: #fff;
-    border-left: 4px solid var(--light-gray);
-    border-radius: 4px;
-    padding: 20px 24px;
-    margin-bottom: 16px;
-  }
-  section.ai .card { border-left-color: var(--orange); }
-  section.ux .card { border-left-color: var(--green); }
-  .card-num {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    color: var(--mid-gray);
-    margin-bottom: 6px;
-  }
-  .card-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    margin: 0 0 10px;
-  }
-  .tags { margin-bottom: 10px; }
-  .tag {
-    display: inline-block;
-    font-size: 12px;
-    font-family: 'Poppins', sans-serif;
-    padding: 3px 10px;
-    border-radius: 12px;
-    margin-right: 6px;
-    background: var(--light-gray);
-    color: var(--dark);
-  }
-  section.ai .tag { background: rgba(217,119,87,0.12); color: var(--orange); }
-  section.ux .tag { background: rgba(120,140,93,0.14); color: var(--green); }
-  .card-summary {
-    font-size: 15px;
-    color: #2c2c2a;
-    margin-bottom: 12px;
-  }
-  .card-link {
-    display: inline-block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: 4px;
-    border: 1px solid var(--dark);
-    color: var(--dark);
-  }
-  .card-link:hover { background: var(--dark); color: var(--light); }
-  footer {
-    max-width: 860px;
-    margin: 40px auto 60px;
-    padding: 24px;
-    border-top: 1px solid var(--light-gray);
-    font-size: 14px;
-    color: var(--mid-gray);
-  }
-  footer a { color: var(--orange); text-decoration: none; }
-  .note {
-    max-width: 860px;
-    margin: 0 auto 24px;
-    padding: 12px 24px;
-    font-size: 13px;
-    color: var(--mid-gray);
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>AI × UI × UX 週報精選</h1>
-  <div class="date-range">2026 年 8 月 24 日 – 8 月 31 日</div>
-  <a href="../index.html" style="color:var(--orange);text-decoration:none;font-size:14px;">← 返回首頁</a>
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">本期重點：World Model 解析、ChatGPT Sites、Claude Design 做 UX。</p>
+    <p class="hero-date">2026/08/24 – 2026/08/31</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
 </header>
 
-<div class="note">本期資料來源：Gmail 訂閱電郵（過去 7 天）。</div>
-
-<section class="category ai">
-  <h2>AI 工具與應用</h2>
-
-  <div class="card">
-    <div class="card-num">01</div>
-    <div class="card-title">World Model 完全解析：Genie 3、Marble 與物理 AI 的競賽</div>
-    <div class="tags">
-      <span class="tag">AI Agent</span><span class="tag">World Model</span><span class="tag">Research</span>
+<main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、開發工具與產業動態 · 4 則</p>
     </div>
-    <div class="card-summary">深入拆解「世界模型」一詞的爆炸性濫用，從 2018 年經典強化學習定義，講到 Google DeepMind Genie 3、Fei-Fei Li 的 World Labs Marble、NVIDIA Cosmos 三種實作路線。文章提供五個判準，幫助你分辨真正的世界模型與行銷話術，對理解機器人與物理 AI 的下一步很有幫助。</div>
-    <a class="card-link" href="https://aishwaryasrinivasan.substack.com/p/world-models-explained-everything" target="_blank">原始連結 →</a>
-  </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">World Model</span><span class="tag">Research</span></div>
+          <h3 class="story-title"><a href="https://aishwaryasrinivasan.substack.com/p/world-models-explained-everything" target="_blank" rel="noopener">World Model 完全解析：Genie 3、Marble 與物理 AI 的競賽</a></h3>
+          <p class="story-summary">深入拆解「世界模型」一詞的爆炸性濫用，從 2018 年經典強化學習定義，講到 Google DeepMind Genie 3、Fei-Fei Li 的 World Labs Marble、NVIDIA Cosmos 三種實作路線。文章提供五個判準，幫助你分辨真正的世界模型與行銷話術，對理解機器人與物理 AI 的下一步很有幫助。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://aishwaryasrinivasan.substack.com/p/world-models-explained-everything" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">aishwaryasrinivasan · Substack</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Tool</span><span class="tag">No-Code</span><span class="tag">Web Builder</span></div>
+          <h3 class="story-title"><a href="https://wondertools.substack.com/p/chatgpt-sites" target="_blank" rel="noopener">ChatGPT Sites 出乎意料地好用：免程式碼的網站生成工具</a></h3>
+          <p class="story-summary">OpenAI 新推出的 ChatGPT Sites（公測中）用對話就能生成有互動功能的網站，作者展示了媒體工具包、讀書清單、互動小遊戲等實例，並與 Claude Artifacts、Lovable、Bolt 等工具比較。對於想快速做 landing page 或個人專案的人是值得關注的替代方案。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://wondertools.substack.com/p/chatgpt-sites" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">wondertools · Substack</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Claude Code</span><span class="tag">Dev Tool</span><span class="tag">Productivity</span></div>
+          <h3 class="story-title"><a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Claude Code 本週更新：桌面版 /resume、手機遙控啟動任務</a></h3>
+          <p class="story-summary">Anthropic 本週週報公布 Claude Code 桌面版可用 /resume 接續終端機工作階段，也能直接從手機啟動遠端工作階段；另外新增 --restricted 安全模式、Claude 自動草擬 bug 報告、子代理跨階段記憶等功能。持續在打磨開發者的多工體驗與安全邊界。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Claude Code Docs</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Hardware</span><span class="tag">Robotics</span></div>
+          <h3 class="story-title"><a href="https://arstechnica.com/ai/2026/08/anthropics-new-hardware-standard-lets-ai-agents-control-the-physical-world/" target="_blank" rel="noopener">Anthropic 推出硬體標準，讓 AI Agent 直接操控實體裝置</a></h3>
+          <p class="story-summary">Anthropic 發布 Model Harness Standard，提供一套標準化驅動介面，讓 AI agent 能更容易串接與控制各種實體裝置，原本需要數週打造的客製整合，有望縮短到數小時完成。這是 AI agent 從純軟體走向操控物理世界的重要一步，值得持續追蹤。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://arstechnica.com/ai/2026/08/anthropics-new-hardware-standard-lets-ai-agents-control-the-physical-world/" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">arstechnica.com</span></div>
+        </div>
+      </article>
+  </section>
 
-  <div class="card">
-    <div class="card-num">02</div>
-    <div class="card-title">ChatGPT Sites 出乎意料地好用：免程式碼的網站生成工具</div>
-    <div class="tags">
-      <span class="tag">AI Tool</span><span class="tag">No-Code</span><span class="tag">Web Builder</span>
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計方法、工具與職涯趨勢 · 4 則</p>
     </div>
-    <div class="card-summary">OpenAI 新推出的 ChatGPT Sites（公測中）用對話就能生成有互動功能的網站，作者展示了媒體工具包、讀書清單、互動小遊戲等實例，並與 Claude Artifacts、Lovable、Bolt 等工具比較。對於想快速做 landing page 或個人專案的人是值得關注的替代方案。</div>
-    <a class="card-link" href="https://wondertools.substack.com/p/chatgpt-sites" target="_blank">原始連結 →</a>
-  </div>
-
-  <div class="card">
-    <div class="card-num">03</div>
-    <div class="card-title">Claude Code 本週更新：桌面版 /resume、手機遙控啟動任務</div>
-    <div class="tags">
-      <span class="tag">Claude Code</span><span class="tag">Dev Tool</span><span class="tag">Productivity</span>
-    </div>
-    <div class="card-summary">Anthropic 本週週報公布 Claude Code 桌面版可用 /resume 接續終端機工作階段，也能直接從手機啟動遠端工作階段；另外新增 --restricted 安全模式、Claude 自動草擬 bug 報告、子代理跨階段記憶等功能。持續在打磨開發者的多工體驗與安全邊界。</div>
-    <a class="card-link" href="https://code.claude.com/docs/en/changelog" target="_blank">原始連結 →</a>
-  </div>
-
-  <div class="card">
-    <div class="card-num">04</div>
-    <div class="card-title">Anthropic 推出硬體標準，讓 AI Agent 直接操控實體裝置</div>
-    <div class="tags">
-      <span class="tag">AI Agent</span><span class="tag">Hardware</span><span class="tag">Robotics</span>
-    </div>
-    <div class="card-summary">Anthropic 發布 Model Harness Standard，提供一套標準化驅動介面，讓 AI agent 能更容易串接與控制各種實體裝置，原本需要數週打造的客製整合，有望縮短到數小時完成。這是 AI agent 從純軟體走向操控物理世界的重要一步，值得持續追蹤。</div>
-    <a class="card-link" href="https://arstechnica.com/ai/2026/08/anthropics-new-hardware-standard-lets-ai-agents-control-the-physical-world/" target="_blank">原始連結 →</a>
-  </div>
-</section>
-
-<section class="category ux">
-  <h2>UI/UX 設計</h2>
-
-  <div class="card">
-    <div class="card-num">05</div>
-    <div class="card-title">EU AI Act 之下，如何打造以人為本的 AI 產品</div>
-    <div class="tags">
-      <span class="tag">AI Ethics</span><span class="tag">Regulation</span><span class="tag">Product Design</span>
-    </div>
-    <div class="card-summary">文章主張最好的 AI 產品應該從「同理心」出發，而非單純追逐技術指標，並以歐盟 AI 法案為框架，討論設計師在合規之外能扮演的角色。對於在做 AI 產品的設計師與 PM，是重新思考「以人為本」設計原則的實用提醒。</div>
-    <a class="card-link" href="https://medium.com/code-like-a-girl" target="_blank">原始連結 →</a>
-  </div>
-
-  <div class="card">
-    <div class="card-num">06</div>
-    <div class="card-title">2026 年 AI 驅動產品設計流程的窘境</div>
-    <div class="tags">
-      <span class="tag">AI x Design</span><span class="tag">Product Design</span><span class="tag">Critique</span>
-    </div>
-    <div class="card-summary">UX Planet 的 Nick Babich 直言，2026 年的 AI 輔助產品設計流程仍然相當混亂：工具多但整合差，設計師常在多個 AI 工具間反覆搬運內容。文章點出目前 AI 設計工作流最痛的斷點，適合正在評估團隊 AI 設計流程的人參考。</div>
-    <a class="card-link" href="https://medium.com/ux-planet" target="_blank">原始連結 →</a>
-  </div>
-
-  <div class="card">
-    <div class="card-num">07</div>
-    <div class="card-title">Claude Design 做 UX：設計完整使用者流程，而非只是 UI 畫面</div>
-    <div class="tags">
-      <span class="tag">Claude Design</span><span class="tag">UX Flow</span><span class="tag">Design Tools</span>
-    </div>
-    <div class="card-summary">同樣來自 Nick Babich，說明如何用 Claude Design 跳脫「單張 UI 快照生成器」的用法，改為串接完整的使用者流程與多畫面情境。對於想把 AI 設計工具用得更接近真實產品設計思維的人很有參考價值。</div>
-    <a class="card-link" href="https://medium.com/ux-planet" target="_blank">原始連結 →</a>
-  </div>
-
-  <div class="card">
-    <div class="card-num">08</div>
-    <div class="card-title">像真正設計師一樣使用 Claude Design 的 5 個技巧</div>
-    <div class="tags">
-      <span class="tag">Claude Design</span><span class="tag">Design Tools</span><span class="tag">Tips</span>
-    </div>
-    <div class="card-summary">作者整理 5 個把 Claude Design 從「一次性 UI 產生器」升級為真正設計工作流工具的技巧，涵蓋提示技巧、迭代方式與素材管理。對已經在用 AI 生成介面稿、但想更systematic 使用的設計師是不錯的實戰筆記。</div>
-    <a class="card-link" href="https://medium.com/@inchristiely" target="_blank">原始連結 →</a>
-  </div>
-</section>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Ethics</span><span class="tag">Regulation</span><span class="tag">Product Design</span></div>
+          <h3 class="story-title"><a href="https://medium.com/code-like-a-girl" target="_blank" rel="noopener">EU AI Act 之下，如何打造以人為本的 AI 產品</a></h3>
+          <p class="story-summary">文章主張最好的 AI 產品應該從「同理心」出發，而非單純追逐技術指標，並以歐盟 AI 法案為框架，討論設計師在合規之外能扮演的角色。對於在做 AI 產品的設計師與 PM，是重新思考「以人為本」設計原則的實用提醒。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/code-like-a-girl" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI x Design</span><span class="tag">Product Design</span><span class="tag">Critique</span></div>
+          <h3 class="story-title"><a href="https://medium.com/ux-planet" target="_blank" rel="noopener">2026 年 AI 驅動產品設計流程的窘境</a></h3>
+          <p class="story-summary">UX Planet 的 Nick Babich 直言，2026 年的 AI 輔助產品設計流程仍然相當混亂：工具多但整合差，設計師常在多個 AI 工具間反覆搬運內容。文章點出目前 AI 設計工作流最痛的斷點，適合正在評估團隊 AI 設計流程的人參考。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/ux-planet" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Claude Design</span><span class="tag">UX Flow</span><span class="tag">Design Tools</span></div>
+          <h3 class="story-title"><a href="https://medium.com/ux-planet" target="_blank" rel="noopener">Claude Design 做 UX：設計完整使用者流程，而非只是 UI 畫面</a></h3>
+          <p class="story-summary">同樣來自 Nick Babich，說明如何用 Claude Design 跳脫「單張 UI 快照生成器」的用法，改為串接完整的使用者流程與多畫面情境。對於想把 AI 設計工具用得更接近真實產品設計思維的人很有參考價值。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/ux-planet" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Claude Design</span><span class="tag">Design Tools</span><span class="tag">Tips</span></div>
+          <h3 class="story-title"><a href="https://medium.com/@inchristiely" target="_blank" rel="noopener">像真正設計師一樣使用 Claude Design 的 5 個技巧</a></h3>
+          <p class="story-summary">作者整理 5 個把 Claude Design 從「一次性 UI 產生器」升級為真正設計工作流工具的技巧，涵蓋提示技巧、迭代方式與素材管理。對已經在用 AI 生成介面稿、但想更systematic 使用的設計師是不錯的實戰筆記。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://medium.com/@inchristiely" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Medium</span></div>
+        </div>
+      </article>
+  </section>
+</main>
 
 <footer>
-  本期共收錄 8 則精選（AI 工具與應用 4 則、UI/UX 設計 4 則）。
-  <br><a href="../index.html" style="color:var(--orange);text-decoration:none;">← 返回首頁</a>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
 </footer>
 
 </body>
