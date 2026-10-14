@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選 — 2026年10月7日–10月14日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #141413;
+    --light: #faf9f5;
+    --mid-gray: #b0aea5;
+    --light-gray: #e8e6dc;
+    --orange: #d97757;
+    --blue: #6a9bcc;
+    --green: #788c5d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--light);
+    color: var(--dark);
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+  }
+  h1, h2, .issue-title, .card-title {
+    font-family: 'Poppins', sans-serif;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+  header { margin-bottom: 40px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--dark);
+  }
+  .date-range { color: var(--mid-gray); font-size: 15px; margin-bottom: 16px; }
+  .back-link {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: var(--orange);
+    text-decoration: none;
+    border-bottom: 1px solid var(--orange);
+    padding-bottom: 2px;
+  }
+  section.category { margin-top: 44px; }
+  .category-heading {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--light-gray);
+  }
+  .category-heading.ai { color: var(--orange); border-color: var(--orange); }
+  .category-heading.ux { color: var(--green); border-color: var(--green); }
+
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--light-gray);
+  }
+  .card.ai { border-left-color: var(--orange); }
+  .card.ux { border-left-color: var(--green); }
+
+  .card-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: var(--mid-gray);
+    letter-spacing: 0.05em;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 6px 0 10px;
+    color: var(--dark);
+  }
+  .tags { margin-bottom: 10px; }
+  .tag {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-right: 6px;
+    background: var(--light-gray);
+    color: var(--dark);
+  }
+  .tag-orange { background: rgba(217,119,87,0.12); color: var(--orange); }
+  .tag-green { background: rgba(120,140,93,0.14); color: var(--green); }
+  .tag-blue { background: rgba(106,155,204,0.14); color: var(--blue); }
+
+  .summary { font-size: 15px; color: #2b2a28; margin: 0 0 14px; }
+
+  .source-btn {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark);
+    background: var(--light-gray);
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .source-btn:hover { background: var(--mid-gray); color: #fff; }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light-gray);
+    text-align: center;
+    color: var(--mid-gray);
+    font-size: 13px;
+  }
+  footer a { color: var(--orange); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>AI × UI × UX 週報精選</h1>
+    <div class="date-range">2026 年 10 月 7 日 – 10 月 14 日</div>
+    <a class="back-link" href="../index.html">← 返回首頁</a>
+  </header>
+
+  <section class="category">
+    <div class="category-heading ai">AI 工具與應用</div>
+
+    <div class="card ai">
+      <div class="card-num">01</div>
+      <div class="card-title">Google Gemini 4 Argon 全面開放，API 限時降價至每百萬 token 2／10 美元</div>
+      <div class="tags">
+        <span class="tag tag-orange">AI Model</span>
+        <span class="tag tag-orange">Google</span>
+        <span class="tag tag-orange">Developer Tools</span>
+      </div>
+      <p class="summary">Google 旗艦多模態模型 Gemini 4 Argon 正式全面開放，可透過 Gemini API、AI Studio、Antigravity 與 Gemini Enterprise 使用，AI Pro／Ultra 訂閱者也能在 Gemini App 與搜尋 AI Mode 中直接用到。限時大幅調降的 API 價格，讓它成為軟體開發、金融與法律分析等場景的新選項，值得評估是否納入現有工作流。</p>
+      <a class="source-btn" href="https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token" target="_blank">查看原文 →</a>
+    </div>
+
+    <div class="card ai">
+      <div class="card-num">02</div>
+      <div class="card-title">Anthropic 自建版本控制系統 Scion 取代 git，每日合併量從 2,500 衝到 30,000</div>
+      <div class="tags">
+        <span class="tag tag-orange">AI Agent</span>
+        <span class="tag tag-orange">Developer Tools</span>
+        <span class="tag tag-orange">Industry</span>
+      </div>
+      <p class="summary">當 AI 代理大量產出程式碼，為人類規模設計的 git 成了瓶頸。Anthropic 花五個月把整個 monorepo 從 git 遷移到自建的 Scion，同時打造了程式碼審查、搜尋與權限系統。這是「開發基礎設施要為 AI 規模重新設計」最具體的案例之一。</p>
+      <a class="source-btn" href="https://www.anthropic.com/engineering/redesigning-source-control" target="_blank">查看原文 →</a>
+    </div>
+
+    <div class="card ai">
+      <div class="card-num">03</div>
+      <div class="card-title">Gemini 推出 Skills 且免費開放，Gems 11 月起退場</div>
+      <div class="tags">
+        <span class="tag tag-orange">AI Tools</span>
+        <span class="tag tag-orange">Skills</span>
+        <span class="tag tag-orange">Google</span>
+      </div>
+      <p class="summary">Gemini Skills 開放給免費帳號使用，輸入「/」即可叫出常用指令，原本的 Gems 將在 11 月起退場。數位時代整理了官方撰寫指南的 8 個技巧，說明技能要怎麼寫，Gemini 才會在對的時機自動套用。Claude 之後 Google 也押注 Skills，代表「可重複使用的 AI 工作流」正成為各家標配。</p>
+      <a class="source-btn" href="https://www.bnext.com.tw/article/92466/gemini-skills-how-to-write-free" target="_blank">查看原文 →</a>
+    </div>
+
+    <div class="card ai">
+      <div class="card-num">04</div>
+      <div class="card-title">2026 台灣工作者 AI 應用大調查：74% 天天用 AI，只有 16% 建立固定工作流</div>
+      <div class="tags">
+        <span class="tag tag-orange">Industry</span>
+        <span class="tag tag-orange">AI Workflow</span>
+        <span class="tag tag-orange">Taiwan</span>
+      </div>
+      <p class="summary">一天一AI 公布 1,503 份有效問卷的調查結果：七成以上台灣工作者幾乎每天使用 AI，但能把 AI 變成固定做法的只有 16%。「常用」和「用得好」之間的落差，正是 Skills、模板與團隊流程設計可以著力的地方。</p>
+      <a class="source-btn" href="https://www.bnext.com.tw/article/92555/taiwan-ai-workflow-survey-2026" target="_blank">查看原文 →</a>
+    </div>
+  </section>
+
+  <section class="category">
+    <div class="category-heading ux">UI/UX 設計</div>
+
+    <div class="card ux">
+      <div class="card-num">05</div>
+      <div class="card-title">用「Action Dots」設計真正能行動的儀表板</div>
+      <div class="tags">
+        <span class="tag tag-green">Dashboard</span>
+        <span class="tag tag-green">Data Viz</span>
+        <span class="tag tag-green">Accessibility</span>
+      </div>
+      <p class="summary">Smashing 的 Vitaly Friedman 介紹 Nick Desbarats 的做法：為每個 KPI 定義從「危機」到「最佳情況」的五段門檻，只有需要注意的指標才顯示彩色圓點，中性區間完全不標示，讓問題一眼浮現。文中也提醒避免只用紅綠配色，應提供色盲友善的藍紅版本。</p>
+      <a class="source-btn" href="https://mailchi.mp/smashingmagazine.com/effective-dashboard-ux-action-dots-10944258" target="_blank">查看原文 →</a>
+    </div>
+
+    <div class="card ux">
+      <div class="card-num">06</div>
+      <div class="card-title">AI 正在掏空設計流程的「中段」，留下沙漏形狀</div>
+      <div class="tags">
+        <span class="tag tag-green">UX Design</span>
+        <span class="tag tag-green">Career</span>
+        <span class="tag tag-green">Trend</span>
+      </div>
+      <p class="summary">UX Collective 的文章指出，過去十五年不斷擴張的設計流程，中段的產出工作正被 AI 快速吸收，剩下兩端：前段的問題定義與後段的判斷、品質把關。對設計師來說，價值正往沙漏的兩端移動。同一週也有多篇文章談「交付物之死」與雙鑽石模型失效，是本週最明顯的討論主題。</p>
+      <a class="source-btn" href="https://medium.com/search?q=AI%20is%20hollowing%20out%20the%20middle%20of%20design%2C%20leaving%20an%20hourglass%20behind" target="_blank">查看原文 →</a>
+    </div>
+
+    <div class="card ux">
+      <div class="card-num">07</div>
+      <div class="card-title">Figma 在 AI 時代死了嗎？AI 反而讓 UI/UX 階段更重要</div>
+      <div class="tags">
+        <span class="tag tag-green">Design Tools</span>
+        <span class="tag tag-green">Figma</span>
+        <span class="tag tag-green">Claude Design</span>
+      </div>
+      <p class="summary">Muzli 的文章認為，當設計轉程式碼越來越快，Figma 的角色會從「畫稿工具」轉向「把關介面品質的關鍵階段」。Nick Babich 本週也實測比較了 Figma 與 Claude Design 從截圖到可互動原型的流程，兩篇搭配閱讀，可以看清工具分工正在怎麼重組。</p>
+      <a class="source-btn" href="https://medium.com/search?q=Is%20Figma%20Dead%20in%20the%20AI%20Era%3F%20Why%20AI%20Makes%20the%20UI/UX%20Phase%20More%20Important" target="_blank">查看原文 →</a>
+    </div>
+
+    <div class="card ux">
+      <div class="card-num">08</div>
+      <div class="card-title">如何替你的設計「去 AI 味」：給 vibe coder 的實用建議</div>
+      <div class="tags">
+        <span class="tag tag-green">Visual Design</span>
+        <span class="tag tag-green">Vibe Coding</span>
+        <span class="tag tag-green">AI + Design</span>
+      </div>
+      <p class="summary">AI 生成的介面容易千篇一律：相同的卡片、圓角漸層與排版。UX Collective 的 Maya Brennan 整理了讓 AI 產出更有個性的做法；同一週也有文章介紹 5 個修正 Claude 預設 UI 的 Skills。延續上期「AI 設計千篇一律」的討論，「品味」正成為設計師最難被取代的能力。</p>
+      <a class="source-btn" href="https://medium.com/search?q=How%20to%20de-slopify%20your%20designs" target="_blank">查看原文 →</a>
+    </div>
+  </section>
+
+  <footer>
+    共收錄 8 則精選 · <a href="../index.html">返回首頁</a>
+  </footer>
+
+</div>
+</body>
+</html>
