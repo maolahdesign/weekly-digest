@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選 — 2026/10/12 – 2026/10/19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
+  }
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">Meta 開放權重模型輕量化、Claude Code 走向平行與雲端，設計師開始比較各家 AI 設計工具的實戰表現。</p>
+    <p class="hero-date">2026/10/12 – 2026/10/19</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、開發工具與產業動態 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Model</span><span class="tag">Meta</span><span class="tag">Open Source</span></div>
+          <h3 class="story-title"><a href="https://venturebeat.com/technology/meta-unveils-muse-spark-open-the-new-top-u-s-open-weights-model-and-it-runs-on-two-paired-mac-desktops" target="_blank" rel="noopener">Meta 推出 Muse Spark Open：8,160 億參數開放權重模型，兩台 Mac 就能跑</a></h3>
+          <p class="story-summary">Muse Spark Open 採用混合專家架構，每個 token 僅啟用 420 億參數，支援 100 萬 token 脈絡與文字、圖片、影片、音訊輸入。Meta 以兩台 M5 Ultra Mac Studio 完成基準測試，被視為美國目前最強的開放權重模型，也讓本地部署大型模型的門檻再往下降。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://venturebeat.com/technology/meta-unveils-muse-spark-open-the-new-top-u-s-open-weights-model-and-it-runs-on-two-paired-mac-desktops" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">VentureBeat · via TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Claude Code</span><span class="tag">Developer Tools</span></div>
+          <h3 class="story-title"><a href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener">Claude Code 桌面版新增巢狀 Session，雲端 Session 可帶著未提交變更接續</a></h3>
+          <p class="story-summary">桌面 App 的新 Session 畫面與巢狀 Session 讓 Claude 能平行處理任務並回報主 Session；把本機 Session 轉到雲端時，會連同未提交的變更與未推送的 commit 一起帶走。Team 方案也能在雲端環境使用網路密鑰，另有 Haiku 5.5 發布與 Max／Team 每月 API 額度。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Claude Code 電子報</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Tools</span><span class="tag">Claude</span><span class="tag">Motion</span></div>
+          <h3 class="story-title"><a href="https://www.bnext.com.tw/article/92639/claude-motion-three-step-tutorial" target="_blank" rel="noopener">Claude Motion 上線：丟試算表就能生成可編輯動畫並匯出 MP4</a></h3>
+          <p class="story-summary">Anthropic 推出 Claude Motion，可將試算表與文件轉成可編輯的動畫，並支援 MP4 匯出。數位時代整理了三步驟操作教學、應用場景與方案限制，對需要快速做資料動畫與簡報素材的設計師特別實用。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://www.bnext.com.tw/article/92639/claude-motion-three-step-tutorial" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">數位時代</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Industry</span><span class="tag">Vibe Coding</span><span class="tag">AI Workflow</span></div>
+          <h3 class="story-title"><a href="https://blog.pragmaticengineer.com/the-pulse-new-trend-of-building-internal-vibe-coding-apps-at-tech-companies/" target="_blank" rel="noopener">科技公司興起自建「內部 vibe coding 工具」，讓非工程師也能做應用</a></h3>
+          <p class="story-summary">Pragmatic Engineer 觀察到，越來越多公司為非工程師打造內部 vibe coding 工具：投入小、採用率比外購產品高，還能累積內部 AI 能力，且讓內部資料來源更安全地接入。對設計師與 PM 而言，這代表「自己做原型」將成為日常能力。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://blog.pragmaticengineer.com/the-pulse-new-trend-of-building-internal-vibe-coding-apps-at-tech-companies/" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Pragmatic Engineer · via TLDR</span></div>
+        </div>
+      </article>
+  </section>
+
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計方法、工具與職涯趨勢 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design Tools</span><span class="tag">Figma</span><span class="tag">MCP</span></div>
+          <h3 class="story-title">Claude 搭配 Figma MCP：讓 AI 直接在 Figma 畫布上寫入設計</h3>
+          <p class="story-summary">這篇 Medium 教學說明如何把 Claude Desktop 連上 Figma MCP 伺服器，讓 AI 直接在畫布上建立 frame、元件與 Auto Layout。Figma 官方文件的 write to canvas 功能目前為 beta 並可免費使用，是「設計稿由 AI 動手」的關鍵一步。電郵未附原文連結，下方整理相關資料。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://developers.figma.com/docs/figma-mcp-server/write-to-canvas" target="_blank" rel="noopener">Write to canvas（Figma 官方文件）</a></li><li><a href="https://html.to.design/blog/from-claude-to-figma-via-mcp" target="_blank" rel="noopener">From Claude to Figma via MCP（html.to.design）</a></li><li><a href="https://www.createwith.com/blog/we-plugged-claude-code-into-figma-but-not-the-way-you-think" target="_blank" rel="noopener">We plugged Claude Code into Figma（Createwith）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">Zubair Shahzad · Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI + Design</span><span class="tag">Claude</span><span class="tag">UI Design</span></div>
+          <h3 class="story-title"><a href="https://uxplanet.org/i-tested-opus-5-5-at-every-effort-level-for-ui-design-c19860ad8563" target="_blank" rel="noopener">實測 Opus 5.5 各努力等級做 UI 設計：Low 只要 1 分鐘，但仍是預設風格</a></h3>
+          <p class="story-summary">Nick Babich 請 Opus 5.5 在 Claude Code 中以 Low 到 Max 各等級設計同一個居家清潔預約畫面。Low 等級約 1 分鐘、耗用 1% 每日額度，符合功能需求但明顯帶有預設樣式，值得參考「何時該拉高努力等級」。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxplanet.org/i-tested-opus-5-5-at-every-effort-level-for-ui-design-c19860ad8563" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Planet</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design Tools</span><span class="tag">Google Stitch</span><span class="tag">Figma</span></div>
+          <h3 class="story-title"><a href="https://uxplanet.org/google-stitch-vs-figma-ai-i-designed-the-same-mobile-app-with-both-7a219c347dba" target="_blank" rel="noopener">Google Stitch vs Figma AI：用同一個行動 App 需求實測比較</a></h3>
+          <p class="story-summary">Nick Babich 刻意不指定品牌、色彩與字體，用同一份提示分別在 Google Stitch 與 Figma AI 上設計行動 App 首頁，並把 Stitch 成果交給 Figma Make 產出原型。可看出兩種 AI 設計工具在創意範圍與工作流上的差異。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxplanet.org/google-stitch-vs-figma-ai-i-designed-the-same-mobile-app-with-both-7a219c347dba" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Planet</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design System</span><span class="tag">AI-Ready</span><span class="tag">Governance</span></div>
+          <h3 class="story-title">讓設計系統為 AI 做好準備：Société Générale 的實戰心得</h3>
+          <p class="story-summary">Société Générale Design 分享把設計系統調整到 AI 能正確使用的過程，包括哪些做法有效、哪些行不通。電郵未附原文連結，搜尋也找不到同名文章，下方整理相關討論：命名、tokens 與元件結構的整理，正是 AI 能否產出一致介面的關鍵。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://ixdf.org/master-classes/build-an-ai-skill-for-your-design-system" target="_blank" rel="noopener">Build an AI Skill for Your Design System（IxDF）</a></li><li><a href="https://www.headway.io/blog/the-5-levels-of-an-ai-ready-design-system" target="_blank" rel="noopener">The 5 levels of an AI-ready design system（Headway）</a></li><li><a href="https://www.uxpin.com/studio/?p=57841" target="_blank" rel="noopener">AI 與設計系統結構（UXPin）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">Henry Daggett · Medium</span></div>
+        </div>
+      </article>
+  </section>
+</main>
+
+<footer>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
+</footer>
+
+</body>
+</html>
