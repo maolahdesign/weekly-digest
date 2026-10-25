@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選 — 2026/10/19 – 2026/10/26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
+  }
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">AI 代理全面進入日常：Claude Duet 與 Meta Muse 搶進代辦市場，設計師則在摸索如何讓設計系統與規範被 AI 讀懂。</p>
+    <p class="hero-date">2026/10/19 – 2026/10/26</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、代理與產業動態 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Claude</span><span class="tag">Industry</span></div>
+          <h3 class="story-title"><a href="https://links.tldrnewsletter.com/0l3eSc" target="_blank" rel="noopener">Anthropic 推出 Claude Duet：為工作而生、先預覽再執行的 AI 代理</a></h3>
+          <p class="story-summary">Claude Duet 可串接逾 6,000 個外部 App，並透過 Link 與 Shop Pay 代為購物；執行前會先顯示計畫，股票交易、轉帳等高風險動作即使使用者同意也會被封鎖。目前已對 Pro 與 Max 訂閱者開放候補名單，是「代理人 UX」如何兼顧自主與安全的實例。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://links.tldrnewsletter.com/0l3eSc" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Productivity</span><span class="tag">Review</span></div>
+          <h3 class="story-title"><a href="https://wondertools.substack.com/p/how-i-use-ai-agents" target="_blank" rel="noopener">實測 12 款 AI 代理：它們與聊天機器人的 5 個差異</a></h3>
+          <p class="story-summary">Wonder Tools 作者同時測試 Dots、Slashy、Hark、Claude Duet 等 12 款代理，指出代理會主動推送晨間摘要、以簡訊對話、保有單一長期對話，並可切換模型。文中也提醒訂閱成本、帳號授權與服務存活率等風險，適合想評估該從哪一款開始的人。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://wondertools.substack.com/p/how-i-use-ai-agents" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Wonder Tools · Substack</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Industry</span><span class="tag">Meta</span><span class="tag">AI Agent</span></div>
+          <h3 class="story-title"><a href="https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/" target="_blank" rel="noopener">Meta 表示 Muse 用戶破 1,000 萬，購物是最熱門用途</a></h3>
+          <p class="story-summary">TechCrunch 報導，Muse 的活躍用戶中超過四分之一用它購物，平均單筆消費逾 200 美元。這顯示 AI 代理的商業化路徑正從「問答」走向「代為下單」，也會直接影響未來介面中的信任與確認流程設計。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">TechCrunch · via TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Architecture</span><span class="tag">Developer</span></div>
+          <h3 class="story-title"><a href="https://blog.exe.dev/topology" target="_blank" rel="noopener">一張圖看懂 LLM 代理迴圈：模型、迴圈與工具的「拓撲」</a></h3>
+          <p class="story-summary">文章指出代理由模型、代理迴圈與工具三者組成，而三者各自在哪裡執行，會決定成本、能力、效果與安全性。用拓撲來拆解產品，就能判斷它能做與不能做什麼，也說明為何通用聊天機器人與程式代理的 UX 不該相同。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://blog.exe.dev/topology" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">exe.dev Blog · via TLDR</span></div>
+        </div>
+      </article>
+  </section>
+
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計方法、工具與設計系統 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI + Design</span><span class="tag">Claude Code</span><span class="tag">Figma</span></div>
+          <h3 class="story-title"><a href="https://uxplanet.org/i-tried-designing-an-entire-product-in-claude-code-without-figma-d5b76360db38" target="_blank" rel="noopener">不用 Figma，只靠 Claude Code 設計一整個產品：5 個心得</a></h3>
+          <p class="story-summary">Nick Babich 實際用 Claude Code 從零設計產品，認為在只有模糊想法的早期探索階段它並不理想；但直接產生動畫程式碼可省去交付翻譯，還能產出交付規格，並用設計評論與無障礙檢查 Skill 做測試。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxplanet.org/i-tried-designing-an-entire-product-in-claude-code-without-figma-d5b76360db38" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Planet · Nick Babich</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design System</span><span class="tag">AI-Ready</span><span class="tag">Figma</span></div>
+          <h3 class="story-title">如何讓 Figma 設計系統被 AI 完整讀懂</h3>
+          <p class="story-summary">作者指出 AI 代理不是看你的稿面，而是讀你的結構。Figma 官方建議包括清楚命名圖層與元件、使用 Auto Layout、定義元件屬性與變數，並發布函式庫。電郵未附原文連結，搜尋也找不到同名文章，下方整理相關資料。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://help.figma.com/hc/en-us/articles/38978644498199-Best-practices-to-help-Figma-AI-understand-your-design-system" target="_blank" rel="noopener">Best practices to help Figma AI understand your design system（Figma 官方說明）</a></li><li><a href="https://muz.li/blog/figma-just-opened-the-canvas-to-ai-agents-heres-what-it-means-for-designers/" target="_blank" rel="noopener">Figma Just Opened the Canvas to AI Agents（Muzli）</a></li><li><a href="https://abduzeedo.com/node/89190" target="_blank" rel="noopener">Figma AI Agents Now Write Directly to the Design Canvas（Abduzeedo）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">Arnaud Morvan · Medium</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design Spec</span><span class="tag">DESIGN.md</span><span class="tag">Claude Code</span></div>
+          <h3 class="story-title">什麼是 DESIGN.md？讓 AI 代理記住你的視覺規範</h3>
+          <p class="story-summary">DESIGN.md 是放在專案根目錄的純文字檔，描述色彩、字級、間距與元件行為，讓 AI 代理在每次新對話都能照同一套規範產出介面，避免落回通用預設風格。電郵未附原文連結，搜尋也找不到該篇，下方整理相關介紹。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://aifordevelopers.substack.com/p/designmd-for-design-in-claude-code" target="_blank" rel="noopener">DESIGN.md for Design in Claude Code（AI for Developers）</a></li><li><a href="https://emelia.io/hub/design-md-ai-agents-standard" target="_blank" rel="noopener">DESIGN.md: How a Simple Markdown File Solved Vibe Coding’s Biggest Design Problem（Emelia）</a></li><li><a href="https://noqta.tn/en/blog/design-md-systeme-design-agents-ia-markdown-2026" target="_blank" rel="noopener">DESIGN.md: The File That Turns AI Agents Into Designers（Noqta）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">UX Planet · Nick Babich</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Sustainability</span><span class="tag">UX Patterns</span><span class="tag">Smashing</span></div>
+          <h3 class="story-title"><a href="https://mailchi.mp/smashingmagazine.com/sustainable-ux" target="_blank" rel="noopener">永續設計模式：從 UX 層面減少數位浪費</a></h3>
+          <p class="story-summary">Vitaly Friedman 指出多數環境衝擊發生在使用者的裝置上，並整理實用做法：選擇最輕量的溝通方式、善用預設值、提早帶出重點、略過不必要的頁面，以及訂定封存與刪除政策。這些幾乎也都是好的可用性原則。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://mailchi.mp/smashingmagazine.com/sustainable-ux" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Smashing Magazine · 電子報</span></div>
+        </div>
+      </article>
+  </section>
+</main>
+
+<footer>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
+</footer>
+
+</body>
+</html>
