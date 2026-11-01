@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選 — 2026/10/26 – 2026/11/02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
+  }
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">Gemini 4 Carbon 重奪榜首、Slack 讓代理住進程式頻道；設計端則在討論 AI 面板氾濫、設計系統從程式碼出發，以及設計工程師的崛起。</p>
+    <p class="hero-date">2026/10/26 – 2026/11/02</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、代理與產業動態 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Model</span><span class="tag">Google</span><span class="tag">Industry</span></div>
+          <h3 class="story-title"><a href="https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited" target="_blank" rel="noopener">Google 發表 Gemini 4 Carbon，重奪更難基準測試的第一名</a></h3>
+          <p class="story-summary">Gemini 4 Carbon 在資安與複雜軟體工程上有明顯進步，目前僅開放給特定資安防禦者，待強化護欄後才會擴大釋出。導入期價格為每百萬輸入 token 2 美元、輸出 10 美元，快取輸入享 95% 折扣，之後恢復為 4 / 20 美元。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">VentureBeat · via TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Collaboration</span><span class="tag">Slack</span></div>
+          <h3 class="story-title"><a href="https://slack.com/blog/developers/slack-code-api" target="_blank" rel="noopener">Slack Code API：讓代理與團隊共用同一個程式頻道</a></h3>
+          <p class="story-summary">代理可自行建立程式頻道、加入相關人員與檔案、即時回報進度並在完成後封存。使用者能看見代理做了什麼、由誰核准，並內建工作區控管與資料邊界，是「人與代理協作介面」的具體範例。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://slack.com/blog/developers/slack-code-api" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Slack Blog · via TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Performance</span><span class="tag">Developer</span></div>
+          <h3 class="story-title"><a href="https://martinalderson.com/posts/making-agents-fast/" target="_blank" rel="noopener">讓 AI 代理更快：12 個月實戰心得</a></h3>
+          <p class="story-summary">作者建議先釐清專案的速度瓶頸落在推論的哪一段，檢查思考預算並閱讀 trace，把代理想要的工具給它，而不是你以為它需要的。平行化與傳統效能優化依然有效，沙箱與 microVM 則會增加複雜度。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://martinalderson.com/posts/making-agents-fast/" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Martin Alderson · via TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Agent</span><span class="tag">Architecture</span><span class="tag">Guardrails</span></div>
+          <h3 class="story-title"><a href="https://cra.mr/a-little-determinism" target="_blank" rel="noopener">A Little Determinism：替 AI 代理加上確定性而不犧牲彈性</a></h3>
+          <p class="story-summary">對代理加限制通常會降低能力，但某些流程需要範本或多階段工作流。文章提出用中間人出口代理（egress proxy）攔截並拒絕特定動作，再以自動訊息引導代理改走正確路徑。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://cra.mr/a-little-determinism" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">cra.mr · via TLDR</span></div>
+        </div>
+      </article>
+  </section>
+
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計方法、工具與設計系統 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Hardware</span><span class="tag">UI</span><span class="tag">Apple</span></div>
+          <h3 class="story-title"><a href="https://arstechnica.com/apple/2026/10/apple-announces-touchscreen-macbook-pro-with-oled-display/" target="_blank" rel="noopener">Apple 發表 OLED 觸控 MacBook Pro，動態島取代瀏海</a></h3>
+          <p class="story-summary">新款 MacBook Pro 採用 OLED 觸控螢幕，最高亮度 2,000 尼特、對比度 10,000,000:1，頂部鏡頭瀏海改為 Dynamic Island。筆電首度進入觸控時代，網頁與桌面 App 的點擊目標與互動設計都值得重新檢視。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://arstechnica.com/apple/2026/10/apple-announces-touchscreen-macbook-pro-with-oled-display/" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Ars Technica · via TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI UX</span><span class="tag">Product</span><span class="tag">Critique</span></div>
+          <h3 class="story-title"><a href="https://uxdesign.cc/nobody-asked-for-the-sparkle-button-ae54ab5065c6" target="_blank" rel="noopener">沒有人要求那個閃光按鈕：AI 面板的同質化問題</a></h3>
+          <p class="story-summary">文章指出各家產品都長出相同的 AI 面板與右上角閃光圖示，且預設開啟、以面板互動量當成功指標，而不是使用者想完成的事。結論是「用 AI 打造功能，而不是做 AI 功能」。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxdesign.cc/nobody-asked-for-the-sparkle-button-ae54ab5065c6" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Collective · Jon Sabutis</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design System</span><span class="tag">Figma MCP</span><span class="tag">AI-Ready</span></div>
+          <h3 class="story-title"><a href="https://uxdesign.cc/building-an-ai-ready-design-system-library-code-figma-with-mcp-ec5d9e8c90d2" target="_blank" rel="noopener">打造 AI-Ready 設計系統：從程式碼出發，用 MCP 產生 Figma 函式庫</a></h3>
+          <p class="story-summary">Christine Vallaure 將方向反轉：設計系統先在程式碼中建立，再用 Figma Console MCP 生成 Figma 函式庫，以程式碼為唯一事實來源，Figma 只是鏡像。這是三部曲系列的第一篇，後兩篇將於 11 月 3 日與 10 日發表。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxdesign.cc/building-an-ai-ready-design-system-library-code-figma-with-mcp-ec5d9e8c90d2" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Collective · Christine Vallaure</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Career</span><span class="tag">Design Engineer</span><span class="tag">Industry</span></div>
+          <h3 class="story-title">為什麼 2026 年我要招設計工程師，而不是 UX 設計師</h3>
+          <p class="story-summary">作者主張在 AI 工具普及後，能直接把設計落實成程式碼的設計工程師更符合團隊需求，UI 與 UX 的分工界線正在淡化。電郵未附原文網址，搜尋也找不到該篇，下方整理相關討論。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://nurxmedov.medium.com/" target="_blank" rel="noopener">Nurkhon 的 Medium 首頁（作者）</a></li><li><a href="https://uxplanet.org/why-the-ux-job-market-is-changing-in-2026-and-most-designers-arent-ready-df2c1073d5f2" target="_blank" rel="noopener">Why the UX Job Market is changing in 2026（UX Planet）</a></li><li><a href="https://www.uxdesigninstitute.com/blog/the-ux-job-market-in-2026-2/" target="_blank" rel="noopener">The UX job market in 2026（UX Design Institute）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">Medium · Nurkhon</span></div>
+        </div>
+      </article>
+  </section>
+</main>
+
+<footer>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
+</footer>
+
+</body>
+</html>
