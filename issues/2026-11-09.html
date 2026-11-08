@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選 — 2026/11/02 – 2026/11/09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
+  }
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">WebMCP 補上工具輸出結構、GitHub 為上千代理重建儲存層；設計端則聚焦 AI 時代的設計系統、代理的停止按鈕，以及設計工程師的崛起。</p>
+    <p class="hero-date">2026/11/02 – 2026/11/09</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、代理與產業動態 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">WebMCP</span><span class="tag">Chrome</span><span class="tag">AI Agent</span></div>
+          <h3 class="story-title"><a href="https://github.com/webmachinelearning/webmcp/pull/254" target="_blank" rel="noopener">WebMCP 新增 outputSchema：讓網頁工具的回傳值也能被宣告</a></h3>
+          <p class="story-summary">Chrome 159 起，document.modelContext.registerTool() 支援選填的 outputSchema，可用 JSON Schema 描述工具回傳格式，如同 inputSchema 描述參數。規格尚未定義輸出不符時 executeTool() 是否失敗，目前建議代理框架自行驗證並回報錯誤給模型。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://github.com/webmachinelearning/webmcp/pull/254" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">WebMCP 規格 PR #254 · via Chrome Built-in AI EPP</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">GitHub</span><span class="tag">Infrastructure</span><span class="tag">AI Agent</span></div>
+          <h3 class="story-title"><a href="https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/" target="_blank" rel="noopener">GitHub 新 Git 儲存架構：支援 5,000 個代理同時作業</a></h3>
+          <p class="story-summary">GitHub 公開新的 Git 儲存架構，可處理每秒數千次寫入、讀取可隨需擴展，並能在單一儲存庫上支撐 5,000 個並行代理且維持低延遲。這反映代理式開發已開始改變底層基礎設施的設計前提。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">GitHub Blog · via TLDR</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Coding</span><span class="tag">Code Quality</span><span class="tag">Agent</span></div>
+          <h3 class="story-title"><a href="https://www.aihero.dev/how-to-make-codebases-ai-agents-love" target="_blank" rel="noopener">程式碼庫品質決定代理品質：Matt Pocock 談軟體工廠</a></h3>
+          <p class="story-summary">Pocock 指出代理會複製既有程式碼的模式，低品質程式碼會讓代理產出同樣低品質的結果，因此需要測試、低複雜度，並運用深模組與接縫（seams）提高可修改性。他認為好的流程應順帶提升既有程式碼的品質底線，而非加速熵增。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://www.aihero.dev/how-to-make-codebases-ai-agents-love" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">AI Hero · Matt Pocock</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Claude Skills</span><span class="tag">Prompting</span><span class="tag">Design Workflow</span></div>
+          <h3 class="story-title"><a href="https://uxplanet.org/anthropic-just-revealed-3-new-rules-for-claude-skills-bf6d5ff66930" target="_blank" rel="noopener">Claude Skills 的新撰寫原則（UX Planet）</a></h3>
+          <p class="story-summary">Medium 摘要信列出 Nick Babich 的文章，指出過去撰寫 Claude Skills 的規則在新一代模型上未必有效，並整理三條最重要的原則與可直接用來檢視既有 Skills 的提示詞。該文為會員限定，內容與標題中的「Anthropic 公布」說法請以官方文件為準。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxplanet.org/anthropic-just-revealed-3-new-rules-for-claude-skills-bf6d5ff66930" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Planet · via Medium 每日摘要</span></div>
+        </div>
+      </article>
+  </section>
+
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計方法、工具與設計系統 · 4 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design System</span><span class="tag">AI</span><span class="tag">MCP</span></div>
+          <h3 class="story-title"><a href="https://uxdesign.cc/what-ai-has-changed-in-design-systems-and-what-is-still-up-to-us-d4e8e8f4ceb2" target="_blank" rel="noopener">AI 改變了設計系統什麼？哪些仍然取決於人</a></h3>
+          <p class="story-summary">Anna Lefour 訪問三位設計專家，討論 AI 如何改變設計系統的建置與維護。重點包括：AI 吃下容易的工作、判斷仍留給人；開源設計系統多已提供 MCP 伺服器，但僅少數設定 Figma Code Connect；文件若都在程式碼裡，Figma 的角色也隨之轉變。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxdesign.cc/what-ai-has-changed-in-design-systems-and-what-is-still-up-to-us-d4e8e8f4ceb2" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Collective · Anna Lefour</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI UX</span><span class="tag">Agent</span><span class="tag">Safety</span></div>
+          <h3 class="story-title">大家都在做 AI 代理，誰來設計「停止按鈕」？</h3>
+          <p class="story-summary">Michał Krztoń 提醒：過去我們設計可預期的流程，如今 AI 能自行行動，停止、核准與中斷的介面成為關鍵。原文網址搜尋不到，下方整理相同主題的討論，包括把「停下來」視為系統正常運作、以及一鍵終止的設計。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://hackernoon.com/every-ai-agent-needs-a-stop-rule" target="_blank" rel="noopener">Every AI Agent Needs a Stop Rule（HackerNoon）</a></li><li><a href="https://dev.to/brennhill/how-to-build-an-ai-kill-switch-and-why-every-agent-needs-one-2758" target="_blank" rel="noopener">How to build an AI kill switch（DEV Community）</a></li><li><a href="https://bittide.aicompass.dev/article/2db462c3-aa75-4559-89c9-17aca377202a" target="_blank" rel="noopener">Your agent isn't failing because of the model, it's failing because nobody built a stop button</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">UX Collective · Michał Krztoń</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Figma</span><span class="tag">MCP</span><span class="tag">Design Specs</span></div>
+          <h3 class="story-title">如何讓 Figma 設計規格能被 AI 讀懂：Claude、MCP 與 Markdown</h3>
+          <p class="story-summary">Joy Mai 分享六個月維護規格文件的經驗，讓 Figma 設計規格以 Markdown 形式被 Claude 透過 MCP 讀取。原文網址搜尋不到；Figma 近期也推出以 Markdown 撰寫設計語言的 Specs，可一併參考。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://www.figma.com/blog/introducing-figma-specs/" target="_blank" rel="noopener">Introducing Figma Specs（Figma）</a></li><li><a href="https://zhiliangchen.substack.com/p/design-systems-as-prompts-part-1" target="_blank" rel="noopener">Design Systems as Prompts, Part 1: Making Figma AI-Readable</a></li><li><a href="https://www.uber.com/bg/en/blog/automate-design-specs/" target="_blank" rel="noopener">Automate design specs（Uber）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">Medium · Joy Mai</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design Engineer</span><span class="tag">Career</span><span class="tag">Handoff</span></div>
+          <h3 class="story-title"><a href="https://youtu.be/LB9WlGw_kiQ" target="_blank" rel="noopener">設計工程師的崛起：產品設計師的工作已經不同</a></h3>
+          <p class="story-summary">John Rodrigues 指出多數職缺仍叫產品設計師，但工作內容已改變：UI 幾秒就能生成、產品數週即可完成，真正的解法不是更好的交接，而是不再交接。他在影片中說明這個轉變為何發生在此刻。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://youtu.be/LB9WlGw_kiQ" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Substack Notes · John Rodrigues</span></div>
+        </div>
+      </article>
+  </section>
+</main>
+
+<footer>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
+</footer>
+
+</body>
+</html>
