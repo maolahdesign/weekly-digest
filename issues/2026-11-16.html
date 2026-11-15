@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × UI × UX 週報精選 — 2026/11/09 – 2026/11/16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --text: #242424; --text-soft: #6b6b6b; --text-faint: #a8a8a8;
+    --bg: #ffffff; --divider: #f2f2f2; --tag-bg: #f2f2f2; --btn-bg: #191919; --btn-text: #ffffff;
+    --medium-green: #1a8917;
+    --accent-ai: #c4561d; --accent-ai-tint: rgba(196, 86, 29, 0.08);
+    --accent-ux: var(--medium-green); --accent-ux-tint: rgba(26, 137, 23, 0.08);
+    --font-ui: "Inter", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Source Serif 4", "Noto Serif TC", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: "DM Serif Display", "Noto Serif TC", Georgia, serif;
+    --fs-hero: clamp(48px, 9vw, 96px); --fs-subtitle: 22px; --fs-section-title: 24px;
+    --fs-story-title: 20px; --fs-body: 20px; --fs-summary: 16px; --fs-ui: 14px; --fs-meta: 13px; --fs-tag: 14px;
+    --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+    --lh-hero: 1.0; --lh-heading: 1.25; --lh-body: 1.6; --lh-summary: 1.5;
+    --ls-hero: -0.03em; --ls-heading: -0.01em;
+    --column: 680px; --page-width: 1192px; --topbar-height: 57px; --gutter: 24px;
+    --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px; --space-xl: 48px; --space-2xl: 56px;
+    --border-line: 1px solid var(--divider); --border-accent-width: 3px; --radius-pill: 99em;
+    --btn-padding: 10px 40px; --btn-sm-padding: 6px 16px; --tag-padding: 6px 14px;
+    --transition: 0.2s ease;
+  }
+  .section--ai { --accent: var(--accent-ai); --accent-tint: var(--accent-ai-tint); }
+  .section--ux { --accent: var(--accent-ux); --accent-tint: var(--accent-ux-tint); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body);
+         font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); height: var(--topbar-height);
+            border-bottom: var(--border-line); }
+  .topbar-inner { max-width: var(--page-width); height: 100%; margin: 0 auto; padding: 0 var(--gutter);
+                  display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--font-display); font-size: 26px; color: var(--black); text-decoration: none; }
+  .topbar-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft);
+                 text-decoration: none; transition: color var(--transition); }
+  .topbar-link:hover { color: var(--text); }
+  .hero { border-bottom: var(--border-line); }
+  .hero-inner { max-width: var(--page-width); margin: 0 auto; padding: 88px var(--gutter) 80px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--fw-regular); font-size: var(--fs-hero);
+             line-height: var(--lh-hero); letter-spacing: var(--ls-hero); color: var(--black); margin: 0 0 var(--space-md); }
+  .hero-sub { font-size: var(--fs-subtitle); color: var(--text); margin: 0 0 var(--space-sm); max-width: 640px; }
+  .hero-date { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); margin: 0 0 var(--space-lg); }
+  .btn-primary { display: inline-block; font-family: var(--font-ui); font-size: var(--fs-ui); font-weight: var(--fw-medium);
+                 background: var(--btn-bg); color: var(--btn-text); padding: var(--btn-padding);
+                 border-radius: var(--radius-pill); text-decoration: none; transition: opacity var(--transition); }
+  .btn-primary:hover { opacity: 0.85; }
+  main { max-width: var(--column); margin: 0 auto; padding: var(--space-2xl) var(--gutter) var(--space-xl); }
+  .section + .section { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--border-line); }
+  .section-head { border-left: var(--border-accent-width) solid var(--accent); padding-left: var(--space-sm);
+                  margin-bottom: var(--space-sm); }
+  .section-title { font-family: var(--font-ui); font-size: var(--fs-section-title); font-weight: var(--fw-bold);
+                   letter-spacing: var(--ls-heading); color: var(--black); margin: 0; line-height: var(--lh-heading); }
+  .section-desc { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); margin: 4px 0 0; }
+  .story { display: grid; grid-template-columns: 48px 1fr; gap: 0; padding: var(--space-md) 0; border-bottom: var(--border-line); }
+  .story:last-child { border-bottom: none; }
+  .story-num { font-family: var(--font-ui); font-size: 28px; font-weight: var(--fw-bold); color: var(--text-faint); line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: 12px; }
+  .tag { font-family: var(--font-ui); font-size: var(--fs-tag); background: var(--tag-bg); color: var(--text);
+         padding: var(--tag-padding); border-radius: var(--radius-pill); line-height: 1.2; }
+  .tag--accent { background: var(--accent-tint); color: var(--accent); }
+  .story-title { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-story-title);
+                 line-height: var(--lh-heading); letter-spacing: var(--ls-heading); color: var(--black); margin: 0 0 var(--space-xs); }
+  .story-title a { text-decoration: none; }
+  .story-title a:hover { text-decoration: underline; }
+  .story-summary { font-size: var(--fs-summary); line-height: var(--lh-summary); color: var(--text-soft); margin: 0 0 var(--space-sm);
+                   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .refs { font-family: var(--font-ui); font-size: var(--fs-meta); margin: 0 0 var(--space-sm); }
+  .refs-label { color: var(--text-faint); }
+  .refs ul { margin: 4px 0 0; padding-left: 18px; }
+  .refs li { color: var(--text-soft); line-height: 1.6; }
+  .refs a { color: var(--text-soft); text-decoration: none; }
+  .refs a:hover { color: var(--text); text-decoration: underline; }
+  .story-actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .btn-outline { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text); border: 1px solid var(--text);
+                 background: transparent; padding: var(--btn-sm-padding); border-radius: var(--radius-pill);
+                 text-decoration: none; transition: background var(--transition), color var(--transition); }
+  .btn-outline:hover { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  .story-source { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-soft); }
+  footer { border-top: var(--border-line); text-align: center; padding: var(--space-lg) var(--gutter) var(--space-xl); }
+  .footer-link { font-family: var(--font-ui); font-size: var(--fs-ui); color: var(--text-soft); text-decoration: none; transition: color var(--transition); }
+  .footer-link:hover { color: var(--text); text-decoration: underline; }
+  .footer-name { font-family: var(--font-ui); font-size: var(--fs-meta); color: var(--text-faint); margin: var(--space-xs) 0 0; }
+  @media (max-width: 728px) {
+    body { font-size: 18px; line-height: 1.55; }
+    .hero-inner { padding: 56px var(--gutter) 48px; }
+    .story { grid-template-columns: 1fr; }
+    .story-num { font-size: 15px; color: var(--accent); margin-bottom: var(--space-xs); }
+    .story-title { font-size: 18px; }
+    .story-summary { font-size: 15px; }
+    .section-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">AI × UI × UX</a>
+    <a class="topbar-link" href="../index.html">返回首頁</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>AI × UI × UX 週報精選</h1>
+    <p class="hero-sub">Opus 5.5 的提示詞指南主張「少寫、別微管理」，代理記憶機制成為焦點；設計端則是獨立版 Claude Design 即將關閉、DESIGN.md 與設計系統為 AI 代理而改寫，設計工程師需求持續升溫。</p>
+    <p class="hero-date">2026/11/09 – 2026/11/16</p>
+    <a class="btn-primary" href="../index.html">返回首頁</a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--ai">
+    <div class="section-head">
+      <h2 class="section-title">AI 工具與應用</h2>
+      <p class="section-desc">模型、代理與工作流程 · 3 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">01</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Claude Opus 5.5</span><span class="tag">Prompting</span><span class="tag">Anthropic</span></div>
+          <h3 class="story-title"><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5" target="_blank" rel="noopener">Opus 5.5 提示詞指南：少寫「請仔細思考」，改為說明完成條件</a></h3>
+          <p class="story-summary">Medium 摘要信以「12 條新規則」為題，但 Anthropic 官方指南並未以條列規則呈現，而是依症狀分成多個章節。重點包括：預設 effort 由 high 降為 medium、思考一律開啟，建議刪除微管理思考量的指令，並重新測試從 Opus 5 沿用的設定。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Anthropic 官方文件 · via Medium 每日摘要</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">02</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Agent Memory</span><span class="tag">LLM</span><span class="tag">AI Agent</span></div>
+          <h3 class="story-title"><a href="https://aishwaryasrinivasan.substack.com/p/how-memory-in-ai-agents-work" target="_blank" rel="noopener">AI 代理的記憶如何運作：從無狀態模型到寫入、儲存、檢索、注入</a></h3>
+          <p class="story-summary">模型權重凍結、每次呼叫彼此獨立，所謂「記得你」其實是外掛的記憶系統。文章拆解工作記憶與持久記憶、四種記憶類型，以及真正困難的是「決定寫什麼」而非儲存；並說明記憶與 RAG 的差異、遺忘與整併的設計。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://aishwaryasrinivasan.substack.com/p/how-memory-in-ai-agents-work" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">AI with Aish · Substack</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">03</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">AI Workflow</span><span class="tag">Automation</span><span class="tag">No-code</span></div>
+          <h3 class="story-title"><a href="https://100days.beehiiv.com/p/the-ai-skills-worth-learning-right-now-4" target="_blank" rel="noopener">自動化、自建工具還是交給 AI？先判斷任務屬於哪一類</a></h3>
+          <p class="story-summary">Harold Dijkstra 提出簡單分類：步驟固定的任務用一般自動化（更便宜可靠）、受限於現有工具時自建內部工具、需要判斷時教 AI 你的做法並由你審核。實務上常需三者組合，例如自動收集數據、內部儀表板與 AI 摘要。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://100days.beehiiv.com/p/the-ai-skills-worth-learning-right-now-4" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">100 Days of No Code · Harold Dijkstra</span></div>
+        </div>
+      </article>
+  </section>
+
+  <section class="section section--ux">
+    <div class="section-head">
+      <h2 class="section-title">UI/UX 設計</h2>
+      <p class="section-desc">設計工具、設計系統與職涯 · 5 則</p>
+    </div>
+      <article class="story">
+        <div class="story-num">04</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Claude Design</span><span class="tag">Design Tools</span><span class="tag">Industry</span></div>
+          <h3 class="story-title"><a href="https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude" target="_blank" rel="noopener">獨立版 Claude Design 12 月 14 日關閉，設計功能併入一般 Claude 對話</a></h3>
+          <p class="story-summary">Anthropic 通知 claude.ai/design 將於 12/14 結束，專案需在 Artifacts 頁面移轉（無法復原，聊天與留言不會一併搬移），無法移轉者請下載 .zip。使用獨立版的 MCP 伺服器、/design-login 與 /design-sync 也會同步停用，Claude Code 的 /design 不受影響。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://support.claude.com/en/articles/17440474-move-from-standalone-claude-design-to-claude" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Anthropic · Claude 官方信件</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">05</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Figma Make</span><span class="tag">Claude Design</span><span class="tag">Design Tools</span></div>
+          <h3 class="story-title">Figma Make 對上 Claude Design：AI 設計工具之爭有贏家嗎？</h3>
+          <p class="story-summary">Shamim Rajani 在 Medium 比較兩種 AI 設計工具。一般評論認為 Claude Design 偏「系統優先」、會讀取程式碼與設計檔建立一致性，Figma Make 則在 Figma 內直接生成與迭代；兩者定位與成熟度仍在變動，選擇取決於工作流程。原文網址搜尋不到，下方為相近比較。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://www.magicpatterns.com/blog/claude-design-vs-figma-make" target="_blank" rel="noopener">Claude Design vs Figma Make: Which AI Design Tool is right for you?（Magic Patterns）</a></li><li><a href="https://www.uxpin.com/studio/ai/claude-design-vs-figma-vs-uxpin/" target="_blank" rel="noopener">Claude Design vs Figma vs UXPin: Three Architectures, Three Outcomes</a></li><li><a href="https://alloy.app/library/figma-make-vs-claude-design" target="_blank" rel="noopener">Figma Make vs Claude Design（Alloy）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">Medium · Shamim Rajani</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">06</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">DESIGN.md</span><span class="tag">Claude Code</span><span class="tag">Design System</span></div>
+          <h3 class="story-title">用 DESIGN.md 搭配 Claude Code 30 天，到底改變了什麼？</h3>
+          <p class="story-summary">Rishi Sharma 花 30 天調校 DESIGN.md，記錄讓 Claude Code 產出的介面更一致的心得。原文網址搜尋不到；下方整理同主題討論，包括如何撰寫 Claude 真的用得上的 DESIGN.md，以及這個格式為何成為 AI 代理的設計標準。</p>
+          <div class="refs"><span class="refs-label">參考連結</span><ul><li><a href="https://uxdesign.cc/how-to-write-a-design-md-file-claude-can-actually-use-2d89d183f823" target="_blank" rel="noopener">How to write a DESIGN.md file Claude can actually use（UX Collective）</a></li><li><a href="https://processtopixels.substack.com/p/writing-a-designmd-file-claude-can" target="_blank" rel="noopener">Writing a DESIGN.md file Claude can actually use（Process to Pixels）</a></li><li><a href="https://emelia.io/hub/design-md-ai-agents-standard" target="_blank" rel="noopener">DESIGN.md: How a Simple Markdown File Solved Vibe Coding's Biggest Design Problem（Emelia）</a></li></ul></div>
+          <div class="story-actions"><span class="story-source">Medium · Design Bootcamp · Rishi Sharma</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">07</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design System</span><span class="tag">AI Agent</span><span class="tag">Governance</span></div>
+          <h3 class="story-title"><a href="https://uxdesign.cc/your-design-system-was-never-the-components-9605130c3038" target="_blank" rel="noopener">設計系統從來不只是元件：Google、Atlassian、Figma 都開始提供「給代理的規範檔」</a></h3>
+          <p class="story-summary">Takuma Kakehi 觀察三家公司都推出記錄設計「原因」的檔案，但指出沒有機制能強制機器遵守，因此這只是比外界說法更小的主張。對設計系統團隊而言，重點從元件庫轉向可被代理讀取的意圖與約束。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://uxdesign.cc/your-design-system-was-never-the-components-9605130c3038" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">UX Collective · Takuma Kakehi</span></div>
+        </div>
+      </article>
+      <article class="story">
+        <div class="story-num">08</div>
+        <div class="story-body">
+          <div class="tags"><span class="tag tag--accent">Design Engineer</span><span class="tag">Career</span><span class="tag">Hiring</span></div>
+          <h3 class="story-title"><a href="https://johnrodrigues.substack.com/p/how-ai-is-changing-design-work" target="_blank" rel="noopener">設計工程師需求上升：AI 讓產品介面變快，也讓產品設計角色分流</a></h3>
+          <p class="story-summary">John Rodrigues 在 Substack Notes 引述數據：AI 產品設計師與設計工程師職缺三個月成長 15%，只有約五分之一寫過程式的設計師自稱設計工程師，薪資總額可達 $200–250K。他認為產品設計正分成靠近工程、靠近 PM 與品牌設計三條路。</p>
+          
+          <div class="story-actions"><a class="btn-outline" href="https://johnrodrigues.substack.com/p/how-ai-is-changing-design-work" target="_blank" rel="noopener">閱讀原文</a><span class="story-source">Substack · John Rodrigues</span></div>
+        </div>
+      </article>
+  </section>
+</main>
+
+<footer>
+  <a class="footer-link" href="../index.html">返回首頁</a>
+  <p class="footer-name">AI × UI × UX 週報精選 · 共收錄 8 則</p>
+</footer>
+
+</body>
+</html>
